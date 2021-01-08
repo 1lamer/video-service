@@ -1,0 +1,68 @@
+
+.channels {
+
+	&__list {}
+
+	&__item {
+		padding: 20px 16px 20px 400px;
+		background-color: #f2f2f2;
+		background-repeat: no-repeat;
+		background-position: 175px center;
+
+		&:not(:last-child) { margin-bottom: 16px; }
+
+		&--cbs { background-image: url('../img/icons/cbs.svg'); }
+		&--nickelodeon { background-image: url('../img/icons/nickelodeon.svg'); }
+		&--abc { background-image: url('../img/icons/abc.svg'); }
+		&--fox { background-image: url('../img/icons/fox.svg'); }
+	}
+
+	&__name {
+		margin-bottom: 17px;
+
+		font-size: 20px;
+		font-weight: 500;
+	}
+
+	&__programs {}
+
+	&__show {
+		font-weight: 400;
+
+		&:not(:last-child) { margin-bottom: 12px; }
+
+		.time {margin-right: 16px;}
+	}
+
+	&__show-link:hover {
+		color: $primary-color;
+
+		transition: 0.2s color;
+	}
+}
+
+
+@media screen and (max-width: $tableWidth) {
+
+	.channels {
+
+		&__item {
+			padding: 20px 16px 20px 200px;
+			background-position: 75px center;
+		}
+	}
+}
+
+@media screen and (max-width: $phoneWidth) {
+  .channels {
+
+		&__item {
+			padding: 20px 16px 20px 120px;
+			background-position: 25px center;
+		}
+
+		&__show {
+			.time { display: block; }
+		}
+	}
+}

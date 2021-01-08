@@ -1,0 +1,37 @@
+.footer {
+	@include flexAlign;
+	flex-direction: column;
+
+	padding: 20px;
+
+	background-color: #F2F2F2;
+
+	text-align: center;
+
+	&__info { 
+		margin-bottom: 10px;
+		font-size: 20px; 
+	}
+
+	&__contacts {
+		@include flexAlign;
+	}
+
+	&__link{
+		&:hover {
+			.footer__icon {
+				fill: $primary-color;
+
+				transition: 0.2s fill;
+			}
+		}
+
+		&:not(:last-child) {
+			margin-right: 20px;
+		}
+	}
+
+	&__icon {
+		fill: $mainFontColor;
+	}
+}

@@ -1,0 +1,21 @@
+.nav {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	&__item	{
+		margin-right: 25px;
+
+		font-size: 28px;
+		font-weight: 500;
+		color: #333333;
+
+		&:hover, &:focus {
+			outline: none;				
+			color: $primary-color;
+		}
+		&:focus {
+			box-shadow: 0 2px 0 0 $primary-color;
+		} 
+	}
+}

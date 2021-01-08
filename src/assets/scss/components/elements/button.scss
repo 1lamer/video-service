@@ -1,0 +1,48 @@
+.button {
+	display: inline-block;
+
+	background-color: #ffffff;
+
+	cursor: pointer;
+
+	font-size: $mainFontSize;
+
+	@include clickAnimation;
+
+	&--simple { 
+		padding: 3px;
+		color: $primary-color;
+
+		&:hover {
+			box-shadow: 1px 2px 2px $primary-color;	
+		}
+
+		&:focus {
+			box-shadow: 1px 2px 2px $primary-color;	
+		}
+	}
+
+	&--rect {
+		padding: 9px 32px;
+
+		border-radius: 4px;
+
+		background: $primary-color;
+
+		color: #ffffff;
+
+		&:hover {
+			box-shadow: 1px 2px 2px #000000;
+			text-shadow: -1px 5px 20px rgba(255,255,255,0.6);
+		}
+
+		&:focus {
+			box-shadow: 1px 2px 2px #000000;	
+		}
+
+		@media screen and (max-width: $tableWidth) {
+	    padding: 9px 20px;
+	  }
+	}
+}
+

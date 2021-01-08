@@ -1,0 +1,68 @@
+.newest {
+
+	&__title {
+		text-align: left;
+	}
+
+	&__list {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+
+		margin-right: -20px;
+	}
+
+	&__item { 
+		margin-bottom: 20px; 
+		margin-right: 20px;
+	}
+
+	&__link {
+		position: relative;
+
+		display: block;
+
+		overflow: hidden;
+		
+		&:hover {
+			.newest__description { 
+				opacity: 1;
+
+				transition: opacity 0.3s ease-in-out;
+			}
+		}
+	}
+
+	&__description { 
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			width: 100%;
+			height: 370px;
+			padding: 16px;
+			border-radius: 8px;
+
+			background-color: rgba(51, 51, 51, 0.8);
+			overflow: hidden;
+			opacity: 0;
+
+			font-size: $mainFontSize;
+			line-height: 22px;
+			color: #ffffff;
+	}
+
+	&__poster {
+		height: 370px;
+		width: 280px;
+		margin-bottom: 15px;
+
+		border-radius: 8px;
+	}
+
+	&__name { 
+		font-size: 20px; 
+		color: $mainFontColor;
+	}
+
+}

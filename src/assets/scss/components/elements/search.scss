@@ -1,0 +1,12 @@
+.search {
+
+	&__input {
+		margin-right: 32px;
+		border-bottom: 1px solid #333333;
+
+		@media screen and (max-width: $tableWidth) {
+	    margin-right: 10px;
+	  }
+	}
+	&__button {}
+}

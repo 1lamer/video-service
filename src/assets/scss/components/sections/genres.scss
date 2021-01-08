@@ -1,0 +1,53 @@
+.genres {
+
+	&__title {}
+
+	&__list {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+
+		margin-right: -20px;
+	}
+
+	&__item {
+		margin-bottom: 20px;
+		margin-right: 20px;
+	}
+
+	&__link {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		height: 208px;
+		width: 280px;
+		border-radius: 6px;
+
+		box-shadow: inset 0px 0px 16px rgba(0, 0, 0, 0.4);
+
+		text-align: center;
+		font-size: 20px;
+		line-height: 24px;
+
+		@include clickAnimation;
+
+		&--comedies {
+			background: linear-gradient(127.83deg, #F2C94C 8.44%, #F29A4A 91.36%);
+		}
+		&--dramas {
+			background: linear-gradient(127.83deg, #F2994A 8.44%, #EB5757 91.36%);
+		}
+		&--fantasy {
+			background: linear-gradient(127.83deg, #56CCF2 8.44%, #2F80ED 91.36%);
+		}
+		&--horrors {
+			background: linear-gradient(127.83deg, #828282 8.44%, #333333 91.36%);
+		}
+	}
+
+	&__name {
+		color: #ffffff;
+	}
+}
