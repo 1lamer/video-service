@@ -1,18 +1,11 @@
 /*HELPERS*/
 @import 'helpers/visually-hidden';
-/*GRIG*/
-@import 'grid/flex.scss';
-
-/*ELEMENTS*/
-@import 'elements/search';
-@import 'elements/button';
-@import 'elements/nav';
-@import 'elements/title';
+@import 'helpers/flex.scss';
 
 /*SECTIONS*/
 @import 'sections/header';
 @import 'sections/films';
-@import 'sections/newest';
+@import 'sections/trending';
 @import 'sections/genres';
 @import 'sections/channels';
 @import 'sections/footer';

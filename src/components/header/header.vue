@@ -10,14 +10,24 @@
 				Videoservice
 			</a>
 
-			<form class="header__search search">
-				<input class="search__input" type="search" placeholder="Search...">
-				<button class="search__button button button--simple" type="submit">Search</button>
-			</form>
+			<search />
 
-			<button type="button" class="button button--rect">Sign up</button>
+			<account />
 
 		</div>
 	</header>
 	<!-- header -->
 </template>
+
+
+<script>
+import search from '@/components/UI/search'
+import account from '@/components/header/account'
+
+export default {
+	components: {
+		search,
+		account
+	}
+}
+</script>

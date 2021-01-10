@@ -44,5 +44,13 @@
 	    padding: 9px 20px;
 	  }
 	}
+
+	&--close {
+		font-size: 30px;
+
+		&:hover, &:focus {
+			box-shadow: 1px 1px 1px #000000;
+		}
+	}
 }
 

@@ -1,0 +1,26 @@
+{
+	"films": [
+		{
+			"name": "Tent",
+			"description": "Armed with only one word, Tenet, and fighting for the survival of the entire world, a Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.",
+			"image": "films/tenet.jpg"
+		},
+		{
+			"name": "Batman",
+			"description": "New Batman as Pattinson is coming! Watch the trailer!",
+			"image": "films/batman.jpg"
+		},
+		{
+			"name": "The Gentlemen",
+			"description": "An American expat tries to sell off his highly profitable marijuana empire in London, triggering plots, schemes, bribery and blackmail in an attempt to steal his domain out from under him.",
+			"image": "films/gentlman.jpg"
+		},
+		{
+			"name": "The Devil All the Time",
+			"description": "Sinister characters converge around a young man devoted to protecting those he loves in a postwar backwoods town teeming with corruption and brutality.",
+			"image": "films/devilallthetime.jpg"
+		}
+	],
+  "shows": [],
+  "genres": []
+}

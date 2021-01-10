@@ -1,4 +1,4 @@
-.newest {
+.trending {
 
 	&__title {
 		text-align: left;
@@ -25,7 +25,7 @@
 		overflow: hidden;
 		
 		&:hover {
-			.newest__description { 
+			.trending__description { 
 				opacity: 1;
 
 				transition: opacity 0.3s ease-in-out;

@@ -3,7 +3,14 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+// Plugins
+import Vuelidate from 'vuelidate'
+Vue.use(Vuelidate)
+//
+
+// Styles
 import '@/assets/scss/main.scss'
+//
 
 Vue.config.productionTip = false
 
