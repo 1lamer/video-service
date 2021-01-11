@@ -5,16 +5,17 @@
 	}
 
 	&__list {
-		display: flex;
-		justify-content: center;
-		flex-wrap: wrap;
+		// display: flex;
+		// justify-content: center;
 
-		margin-right: -20px;
+		// margin-right: -20px;
 	}
 
-	&__item { 
-		margin-bottom: 20px; 
-		margin-right: 20px;
+	&__item {
+		// flex-shrink: 0;
+
+		// margin-bottom: 20px;
+		// margin-right: 20px;
 	}
 
 	&__link {

@@ -11,6 +11,7 @@
 			<h3 class="trending__name">{{item.name}}</h3>
 		</a>
 	</li>
+	<!-- /trending__item -->
 
 </template>
 

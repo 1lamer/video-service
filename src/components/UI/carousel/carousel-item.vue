@@ -1,6 +1,6 @@
 <template>
-	<div>
-		
+	<div class="carousel-item">
+		<slot></slot>
 	</div>
 </template>
 
@@ -8,8 +8,19 @@
 
 export default {
 	name: 'carousel-item',
+	components: {
+
+	},
 	props: {
 		
 	}
 }
 </script>
+
+<style lang="scss">
+
+	.carousel-item {
+		min-width: 300px;
+		padding: 0 10PX;
+	}
+</style>
