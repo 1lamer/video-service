@@ -4,7 +4,7 @@
 @mixin clickAnimation {
   &:hover {
     transform: translateY(-1px);
-    transition: all 0.2s;
+    transition: transform 0.2s;
   }
 
   &:active {

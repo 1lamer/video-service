@@ -1,132 +1,132 @@
 <template>
-  <section class="channels">
+  <section class="shows">
 
-    <ul class="channels__list">
+    <ul class="shows__list">
 
-      <li class="channels__item channels__item--cbs">
+      <li class="shows__item shows__item--cbs">
 
-        <h3 class="channels__name">CBS</h3>
+        <h3 class="shows__name">CBS</h3>
 
-        <ul class="channels__programs">
+        <ul class="shows__programs">
 
-          <li class="channels__show">
-            <a href="" class="channels__show-link">
+          <li class="shows__show">
+            <a href="" class="shows__show-link">
               <time class="time" datetime="PT2H30M">2:30 PM</time>
               Young Sheldon
             </a>
           </li>
 
-          <li class="channels__show">
-            <a href="" class="channels__show-link">
+          <li class="shows__show">
+            <a href="" class="shows__show-link">
               <time class="time" datetime="PT2H30M">2:30 PM</time>
               48 Hours
             </a>
           </li>
 
-          <li class="channels__show">
-            <a href="" class="channels__show-link">
+          <li class="shows__show">
+            <a href="" class="shows__show-link">
               <time class="time" datetime="PT2H30M">2:30 PM</time>
               FBI
             </a>
           </li>
         </ul>
-        <!-- channels__programs -->
+        <!-- shows__programs -->
       </li>
-      <!-- channels__item -->
+      <!-- shows__item -->
 
-      <li class="channels__item channels__item--nickelodeon">
+      <li class="shows__item shows__item--nickelodeon">
 
-        <h3 class="channels__name">Nickelodeon</h3>
+        <h3 class="shows__name">Nickelodeon</h3>
 
-        <ul class="channels__programs">
-          <li class="channels__show">
-            <a href="" class="channels__show-link">
+        <ul class="shows__programs">
+          <li class="shows__show">
+            <a href="" class="shows__show-link">
               <time class="time" datetime="PT2H30M">2:30 PM</time>
               Young Sheldon
             </a>
           </li>
 
-          <li class="channels__show">
-            <a href="" class="channels__show-link">
+          <li class="shows__show">
+            <a href="" class="shows__show-link">
               <time class="time" datetime="PT2H30M">2:30 PM</time>
               Young Sheldon
             </a>
           </li>
 
-          <li class="channels__show">
-            <a href="" class="channels__show-link">
+          <li class="shows__show">
+            <a href="" class="shows__show-link">
               <time class="time" datetime="PT2H30M">2:30 PM</time>
               Young Sheldon
             </a>
           </li>
         </ul>
-        <!-- channels__programs -->
+        <!-- shows__programs -->
       </li>
-      <!-- channels__item -->
+      <!-- shows__item -->
 
-      <li class="channels__item channels__item--abc">
+      <li class="shows__item shows__item--abc">
 
-        <h3 class="channels__name">ABC</h3>
+        <h3 class="shows__name">ABC</h3>
 
-        <ul class="channels__programs">
-          <li class="channels__show">
-            <a href="" class="channels__show-link">
+        <ul class="shows__programs">
+          <li class="shows__show">
+            <a href="" class="shows__show-link">
               <time class="time" datetime="PT2H30M">2:30 PM</time>
               Young Sheldon
             </a>
           </li>
 
-          <li class="channels__show">
-            <a href="" class="channels__show-link">
+          <li class="shows__show">
+            <a href="" class="shows__show-link">
               <time class="time" datetime="PT2H30M">2:30 PM</time>
               Young Sheldon
             </a>
           </li>
 
-          <li class="channels__show">
-            <a href="" class="channels__show-link">
+          <li class="shows__show">
+            <a href="" class="shows__show-link">
               <time class="time" datetime="PT2H30M">2:30 PM</time>
               Young Sheldon
             </a>
           </li>
         </ul>
-        <!-- channels__programs -->
+        <!-- shows__programs -->
       </li>
-      <!-- channels__item -->
+      <!-- shows__item -->
 
-      <li class="channels__item channels__item--fox">
+      <li class="shows__item shows__item--fox">
 
-        <h3 class="channels__name">Fox</h3>
+        <h3 class="shows__name">Fox</h3>
 
-        <ul class="channels__programs">
-          <li class="channels__show">
-            <a href="" class="channels__show-link">
+        <ul class="shows__programs">
+          <li class="shows__show">
+            <a href="" class="shows__show-link">
               <time class="time" datetime="PT2H30M">2:30 PM</time>
               Young Sheldon
             </a>
           </li>
 
-          <li class="channels__show">
-            <a href="" class="channels__show-link">
+          <li class="shows__show">
+            <a href="" class="shows__show-link">
               <time class="time" datetime="PT2H30M">2:30 PM</time>
               Young Sheldon
             </a>
           </li>
 
-          <li class="channels__show">
-            <a href="" class="channels__show-link">
+          <li class="shows__show">
+            <a href="" class="shows__show-link">
               <time class="time" datetime="PT2H30M">2:30 PM</time>
               Young Sheldon
             </a>
           </li>
         </ul>
-        <!-- channels__programs -->
+        <!-- shows__programs -->
       </li>
-      <!-- channels__item -->
+      <!-- shows__item -->
     </ul>
-    <!-- channels__list -->
+    <!-- shows__list -->
   </section>
-  <!-- channels -->
+  <!-- shows -->
 </template>
 
 

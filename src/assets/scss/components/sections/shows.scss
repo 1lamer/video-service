@@ -1,5 +1,5 @@
 
-.channels {
+.shows {
 
 	&__list {}
 
@@ -44,7 +44,7 @@
 
 @media screen and (max-width: $tableWidth) {
 
-	.channels {
+	.shows {
 
 		&__item {
 			padding: 20px 16px 20px 200px;
@@ -54,7 +54,7 @@
 }
 
 @media screen and (max-width: $phoneWidth) {
-  .channels {
+  .shows {
 
 		&__item {
 			padding: 20px 16px 20px 120px;

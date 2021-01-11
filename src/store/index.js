@@ -12,7 +12,11 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
 	state: {
-		trendingFilms: []
+		trending: [],
+		myList: [],
+		films: [],
+		shows: [],
+		genres: [],
 	},
 	mutations,
 	actions,

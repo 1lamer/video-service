@@ -107,7 +107,6 @@ export default {
 
 		&__wrapper {
 			display: flex;
-			// justify-content: space-between;
 
 			margin: 0 -10px;
 
@@ -120,7 +119,7 @@ export default {
 
 			background-color: rgba(0, 0, 0, 0.6);
 			border: none;
-			border-radius: 50%;
+			border-radius: 20px;
 
 			cursor: pointer;
 

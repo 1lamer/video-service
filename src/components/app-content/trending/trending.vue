@@ -1,5 +1,5 @@
 <template>
-	<section class="films__trending trending">
+	<section class="trending">
 
 		<h2 class="trending__title title">&#128293; Trending</h2>
 		
@@ -9,7 +9,7 @@
 			>
 				<!-- Creating a slider by passing trending-item conponent to carousel -->
 					<carouselItem v-for="(item, index) in trending" :key="index">
-						<trendingItem :key="index" :item="item" />
+						<item :key="index" :item="item" />
 					</carouselItem>
 			</carousel>
 		</ul>
@@ -21,14 +21,14 @@
 </template>
 
 <script>
-import trendingItem from '@/components/app-content/trending/trending-item'
+import item from '@/components/app-content/item'
 import carousel from '@/components/UI/carousel/carousel'
 import carouselItem from '@/components/UI/carousel/carousel-item'
 
 export default {
 	name: 'Trending',
 	components: {
-		trendingItem,
+		item,
 		carousel,
 		carouselItem
 	},

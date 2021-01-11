@@ -3,8 +3,8 @@
 @import 'utils/mixins';
 @import 'utils/fonts';
 @import 'utils/reset';
-@import 'components/components';
 @import 'common';
+@import 'components/components';
 
 html {
   line-height: $mainLineHeight;
