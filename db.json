@@ -125,6 +125,61 @@
 			"genre": "action"
 		}
 	],
-  "shows": [],
-  "genres": ["horror", "action", "comedy", "fantasy", "drama", "adventure", "documentary", "thriller"]
+  "shows": [
+  	{
+			"name": "Biohackers",
+			"description": "Armed with only one word, Tenet, and fighting for the survival of the entire world, a Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.",
+			"image": "films/biohackers.jpg",
+			"genre": "drama"
+		},
+		{
+			"name": "Curon",
+			"description": "New Batman as Pattinson is coming! Watch the trailer!",
+			"image": "films/curon.jpg",
+			"genre": "thriller"
+		},
+		{
+			"name": "Emily in Paris",
+			"description": "An American expat tries to sell off his highly profitable marijuana empire in London, triggering plots, schemes, bribery and blackmail in an attempt to steal his domain out from under him.",
+			"image": "films/emilyinparis.jpg",
+			"genre": "comedy"
+		},
+		{
+			"name": "The Letter for the King",
+			"description": "Sinister characters converge around a young man devoted to protecting those he loves in a postwar backwoods town teeming with corruption and brutality.",
+			"image": "films/letterforking.jpg",
+			"genre": "adventure"
+		},
+		{
+			"name": "The Wilds",
+			"description": "An American expat tries to sell off his highly profitable marijuana empire in London, triggering plots, schemes, bribery and blackmail in an attempt to steal his domain out from under him.",
+			"image": "films/thewilds.jpg",
+			"genre": "drama"
+		},
+		{
+			"name": "The Woods",
+			"description": "Sinister characters converge around a young man devoted to protecting those he loves in a postwar backwoods town teeming with corruption and brutality.",
+			"image": "films/thewoods.jpg",
+			"genre": "mystery"
+		},
+		{
+			"name": "Utopia",
+			"description": "An American expat tries to sell off his highly profitable marijuana empire in London, triggering plots, schemes, bribery and blackmail in an attempt to steal his domain out from under him.",
+			"image": "films/utopia.jpg",
+			"genre": "drama"
+		},
+		{
+			"name": "The Valhalla Murders",
+			"description": "Sinister characters converge around a young man devoted to protecting those he loves in a postwar backwoods town teeming with corruption and brutality.",
+			"image": "films/valhallamurders.jpg",
+			"genre": "mystery"
+		},
+		{
+			"name": "Freud",
+			"description": "Sinister characters converge around a young man devoted to protecting those he loves in a postwar backwoods town teeming with corruption and brutality.",
+			"image": "films/freud.jpg",
+			"genre": "thriller"
+		}
+  ],
+  "genres": ["horror", "action", "comedy", "fantasy", "drama", "adventure", "documentary", "thriller", "mystery"]
 }

@@ -3,25 +3,23 @@
 
 		<h2 class="genres__title title">&#127917; Genres</h2>
 
-		
-
 		<ul class="genres__list list">
 
 			<li
 				class="genres__item list__item"
 				v-for="genre in genres" :key="genre"
 			>
-				<a href="#" class="genres__link genres__link--comedies">
-					<h3 class="genres__name">{{genre}}</h3>
-				</a>
+				<button
+					class="genres__select"
+					:class="{selected: isSelected(genre)}"
+					@click="filter(genre)"
+				>
+					<span class="genres__name">{{genre}}</span>
+				</button>
 			</li>
 
 		</ul>
 		<!-- genres__list -->
-
-		<!-- <button class="genres__button button">
-			Show more
-		</button> -->
 
 	</section>
 	<!-- genree -->
@@ -32,21 +30,69 @@
 import {mapState, mapActions} from 'vuex'
 
 export default {
-	name: 'Genres',
+	name: 'genres',
 	components: {
 
 	},
 	data: () => ({
-
+		selectedGenres: []
 	}),
 	computed: {
-		...mapState(['genres'])
+		...mapState(['genres']),
 	},
 	methods: {
-		...mapActions(['getGenres'])
+		...mapActions(['getGenres', 'dFiltered']),
+
+		filter(genre) {
+			/*
+				Checking for exsisting of genre in "genres array"
+				If yes, then the genre will be removed from array and
+				in dispatch func will be passed the array without this genre
+			*/ 
+			if (this.selectedGenres.includes(genre)) {
+				const id = this.selectedGenres.indexOf(genre)
+				this.selectedGenres.splice(id, 1)
+				this.dFiltered([this.selectedGenres, this.$route.name])
+				this.$emit('selectedGenres', this.selectedGenres)
+				return
+			}
+			this.selectedGenres.push(genre)
+			this.$emit('selectedGenres', this.selectedGenres)
+			this.dFiltered([this.selectedGenres, this.$route.name])
+		},
+
+		isSelected(genre) {
+			return this.selectedGenres.includes(genre) ? true : false
+		}
 	},
 	created() {
 		this.getGenres()
+	},
+	beforeDestroy() {
+		this.dFiltered([[], this.$route.name])
 	}
 }
 </script>
+
+<style lang="scss">
+
+.genres {
+
+	&__title {}
+
+	&__list {}
+
+	&__item {
+		box-shadow: 5px 5px 16px -1px #000000;
+	}
+
+	&__select {
+		&.selected {
+			box-shadow: inset 0px 0px 0px 1px #FFFFFF;
+		}
+	}
+
+	&__name {}
+}
+
+</style>

@@ -59,6 +59,20 @@ li {
   list-style-type: none;
 }
 
+
+textarea::placeholder {
+  font-family: $mainFont;
+  font-weight: 400;
+}
+
+input::placeholder {
+  font-family: $mainFont;
+  font-weight: 400;
+}
+
+input, textarea, select, button { font-family: $mainFont }
+
+
 section,
 .section {
   position: relative;

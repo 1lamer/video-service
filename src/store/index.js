@@ -17,6 +17,8 @@ export default new Vuex.Store({
 		films: [],
 		shows: [],
 		genres: [],
+		filtered: [],
+		search: ''
 	},
 	mutations,
 	actions,

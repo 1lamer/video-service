@@ -3,11 +3,10 @@
 
 		<trending :trending="trending"/>
 
-		<myList :list="trending"/>
+		<myList />
 
 		
 	</section>
-	<!-- /home -->
 </template>
 
 <script>

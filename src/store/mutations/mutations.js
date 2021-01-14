@@ -3,19 +3,27 @@ export default {
 		state.trending = items
 	},
 
-	myList(state, items) {
-		state.myList = items
+	myList(state, list) {
+		state.myList = list
 	},
 
-	films(state, items) {
-		state.films = items
+	films(state, films) {
+		state.films = films
 	},
 
-	shows(state, items) {
-		state.shows = items
+	shows(state, shows) {
+		state.shows = shows
 	},
 
-	genres(state, items) {
-		state.genres = items
+	genres(state, genres) {
+		state.genres = genres
+	},
+
+	filtered(state, payload) {
+		state.filtered = payload
+	},
+
+	search(state, search) {
+		state.search = search
 	}
 }

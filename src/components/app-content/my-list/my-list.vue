@@ -10,11 +10,10 @@
 		</ul>
 		
 	</section>
-	<!-- /home -->
 </template>
 
 <script>
-import {mapState, mapActions} from 'vuex'
+import {mapState, mapGetters, mapActions} from 'vuex'
 import item from '@/components/app-content/item'
 
 
@@ -24,22 +23,23 @@ export default {
 		item
 	},
 	props: {
-		list: {
-			type: Array,
-			default: () => []
-		}
+		
 	},
 	data: () => ({
 
 	}),
 	computed: {
-		...mapState(['myList'])
+		...mapState(['myList']),
 	},
 	methods: {
 		...mapActions(['getMyList'])
 	},
 	created() {
 		this.getMyList()
+	},
+	beforeDestroy() {
+		// Clear filtered state in order to display default content in onther pages
+		this.$store.state.filtered = []
 	}
 }
 </script>

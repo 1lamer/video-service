@@ -1,7 +1,17 @@
 <template>
   <section class="shows">
 
-    <ul class="shows__list">
+    <genres @selectedGenres="selectedGenres = $event"/>
+
+    <h2 class="shows__title title">&#127909; All TV Shows</h2>
+    
+    <ul class="shows__list list">
+      <li class="shows__item list__item" v-for="(item, index) in filtered(this.$route.name, this.selectedGenres)" :key="index">
+        <item :item="item" />
+      </li>
+    </ul>
+
+    <!-- <ul class="shows__list">
 
       <li class="shows__item shows__item--cbs">
 
@@ -30,9 +40,7 @@
             </a>
           </li>
         </ul>
-        <!-- shows__programs -->
       </li>
-      <!-- shows__item -->
 
       <li class="shows__item shows__item--nickelodeon">
 
@@ -60,9 +68,9 @@
             </a>
           </li>
         </ul>
-        <!-- shows__programs -->
+        
       </li>
-      <!-- shows__item -->
+      
 
       <li class="shows__item shows__item--abc">
 
@@ -90,9 +98,9 @@
             </a>
           </li>
         </ul>
-        <!-- shows__programs -->
+        
       </li>
-      <!-- shows__item -->
+      
 
       <li class="shows__item shows__item--fox">
 
@@ -120,21 +128,41 @@
             </a>
           </li>
         </ul>
-        <!-- shows__programs -->
+        
       </li>
-      <!-- shows__item -->
-    </ul>
-    <!-- shows__list -->
+    </ul> -->
+
+
   </section>
-  <!-- shows -->
 </template>
 
 
 <script>
+import {mapActions, mapGetters} from 'vuex'
+import genres from '@/components/app-content/genres'
+import item from '@/components/app-content/item'
 
 export default {
   name: 'Channels',
   components: {
+    item,
+    genres,
+  },
+  data: () => ({
+    selectedGenres: [],
+  }),
+  computed: {
+    ...mapGetters(['filtered']),
+  },
+  methods: {
+    ...mapActions(['getShows']),
+  },
+  created() {
+    this.getShows()
+  },
+  beforeDestroy() {
+    // Clear filtered state in order to display default content in onther pages
+    this.$store.state.filtered = []
   }
 }
 </script>
