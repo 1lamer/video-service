@@ -6,6 +6,10 @@
 		<ul class="my-list__list list">
 			<item v-for="(item, index) in myList" :key="index" :item="item" />
 		</ul>
+
+		<messageOfAbsence v-show="!myList.length">
+			It was nothing added to list (；ω；)
+		</messageOfAbsence>
 		
 	</section>
 </template>
@@ -13,12 +17,13 @@
 <script>
 import {mapState, mapGetters, mapActions} from 'vuex'
 import item from '@/components/app-content/item'
-
+import messageOfAbsence from '@/components/UI/message-of-absence'
 
 export default {
 	name: 'myList',
 	components: {
-		item
+		item,
+		messageOfAbsence
 	},
 	props: {
 		

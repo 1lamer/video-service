@@ -1,10 +1,12 @@
 <template>
-	<p class="notFound">It was nothing found ¯\_(ツ)_/¯</p>
+	<p class="messageOfAbsence">
+		<slot></slot>
+	</p>
 </template>
 
 <script>
 export default {
-	name: 'notFound',
+	name: 'messageOfAbsense',
 	components: {
 	},
 	computed: {
@@ -15,7 +17,7 @@ export default {
 </script>
 
 <style lang="scss">
-	.notFound {
+	.messageOfAbsence {
 		display: flex;
 		justify-content: center;
 		align-items: center;

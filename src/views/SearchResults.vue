@@ -8,7 +8,9 @@
 			<item v-for="(item, index) in searchResults(search)" :key="index" :item="item"/>
 		</ul>
 
-		<notFound v-show="!searchResults(search).length"/>
+		<messageOfAbsence v-show="!searchResults(search).length">
+			It was nothing found ¯\_(ツ)_/¯
+		</messageOfAbsence>
 	</section>
 
 </template>
@@ -17,12 +19,12 @@
 <script>
 import {mapActions, mapGetters, mapState} from 'vuex'
 import item from '@/components/app-content/item'
-import notFound from '@/components/UI/notFound'
+import messageOfAbsence from '@/components/UI/message-of-absence'
 export default {
 	name: 'SearchResults',
 	components: {
 		item,
-		notFound
+		messageOfAbsence
 	},
 	computed: {
 		...mapGetters(['searchResults']),
