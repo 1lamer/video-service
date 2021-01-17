@@ -1,10 +1,9 @@
 /* Mixins:
   ========================================================================== */
 // Button click animation 
-@mixin clickAnimation {
+@mixin buttonAnimation {
   &:hover {
-    transform: translateY(-1px);
-    transition: transform 0.2s;
+    transition: background-color 0.2s;
   }
 
   &:active {

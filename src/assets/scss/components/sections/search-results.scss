@@ -1,0 +1,11 @@
+.search-results {
+	&__title {}
+	&__list {}
+	&__notFound {
+		@include flexAlign;
+
+		height: 70vh;
+
+		font-size: 30px;
+	}
+}

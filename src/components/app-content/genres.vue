@@ -1,7 +1,7 @@
 <template>
 	<section class="films__genres genres">
 
-		<h2 class="genres__title title">&#127917; Genres</h2>
+		<h2 class="genres__title title">Genres</h2>
 
 		<ul class="genres__list list">
 

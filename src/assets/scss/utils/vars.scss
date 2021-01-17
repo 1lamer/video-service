@@ -10,6 +10,7 @@ $mainFontSize            : 16px;
 $mainFontWeight          : 400;
 $mainLineHeight          : 1.4;
 
+$maxDesktopWidth				 : 1360px;
 $desktopWidth            : 1200px;
 $smDesktopWidth          : 1024px;
 $tableWidth              : 768px;
@@ -22,7 +23,8 @@ $smPhoneWidth            : 320px;
 $margin-right: 20px;
 
 // Main color
-$default-color           : #000000;
+$default-color           : #333333;
+$default-back-color			 : #ffffff;
 $primary-color           : #e5261e;
 $success-color           : #26de81;
 $danger-color            : #fc5c65;

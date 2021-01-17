@@ -1,12 +1,10 @@
 <template>
 	<section class="my-list">
 
-		<h2 class="my-list__title title">&#128420; My list</h2>
+		<h2 class="my-list__title title">My list</h2>
 
 		<ul class="my-list__list list">
-			<li class="my-list__item list__item" v-for="(item, index) in myList" :key="index">
-				<item :item="item" />
-			</li>
+			<item v-for="(item, index) in myList" :key="index" :item="item" />
 		</ul>
 		
 	</section>
@@ -39,7 +37,7 @@ export default {
 	},
 	beforeDestroy() {
 		// Clear filtered state in order to display default content in onther pages
-		this.$store.state.filtered = []
+		// this.$store.state.filtered = []
 	}
 }
 </script>

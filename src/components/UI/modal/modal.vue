@@ -6,7 +6,9 @@
 
         <div class="modal__header">
 
-          <h4 class="modal__title"> {{ title }} </h4>
+          <h4 class="modal__title"> 
+            {{ title }}
+          </h4>
 
           <button class="button button--close" @click="$emit('close')">×</button>
 
@@ -35,7 +37,7 @@ export default {
     title: {
       type: String,
       required: true
-    }
+    },
   },
   mounted() {
     document.body.addEventListener('keyup', e => {

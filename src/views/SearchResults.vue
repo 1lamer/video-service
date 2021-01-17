@@ -2,14 +2,13 @@
 
 	<section class="search-results">
 
-		<h2 class="search-results__title title">&#128270; Search results</h2>
+		<h2 class="search-results__title title">Search results</h2>
 
 		<ul class="search-results__list list">
-			<li class="search-results__item list__item" v-for="(item, index) in searchResults(search)" :key="index">
-				<item :item="item" />
-			</li>
+			<item v-for="(item, index) in searchResults(search)" :key="index" :item="item"/>
 		</ul>
 
+		<p class="search-results__notFound" v-show="!searchResults(search).length">It was nothing found ¯\_(ツ)_/¯</p>
 	</section>
 
 </template>

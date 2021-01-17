@@ -3,12 +3,10 @@
 
     <genres @selectedGenres="selectedGenres = $event"/>
 
-    <h2 class="shows__title title">&#127909; All TV Shows</h2>
+    <h2 class="shows__title title">All TV Shows</h2>
     
     <ul class="shows__list list">
-      <li class="shows__item list__item" v-for="(item, index) in filtered(this.$route.name, this.selectedGenres)" :key="index">
-        <item :item="item" />
-      </li>
+      <item v-for="(item, index) in filtered(this.$route.name, this.selectedGenres)" :key="index" :item="item" />
     </ul>
 
     <!-- <ul class="shows__list">

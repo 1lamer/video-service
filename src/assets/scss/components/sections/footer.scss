@@ -1,4 +1,9 @@
 .footer {
+	position: absolute;
+	left: 0;
+	right: 0;
+	buttom: 0;
+	
 	@include flexAlign;
 	flex-direction: column;
 

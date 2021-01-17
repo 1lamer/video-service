@@ -25,5 +25,35 @@ export default {
 
 	search(state, search) {
 		state.search = search
+	},
+
+	addToMyList(state, payload) {
+		console.log(state, payload, 'You are fucking idiot');
+		// const [content, isInMyList] = payload
+
+		// if (content.type === 'movie') {
+		// 	state.films.forEach(film => {
+		// 		if (film.id === content.id) film.isInMyList = isInMyList
+		// 	})
+		// }
+
+		// state.myList.forEach((item, index) => {
+		// 	console.log(item.id);
+		// 	console.log(index);
+
+		// 	if (item.id === content.id) {
+		// 		state.myList.splice(index, 1)
+		// 	}
+		// 	else {
+		// 		state.myList.unshift(content)
+		// 	}
+		// })
+
+		// const newList = state.myList.filter((item, index) => {
+		// 	if (item.id === content.id) return false
+		// 	else {
+
+		// 	}
+		// })
 	}
 }

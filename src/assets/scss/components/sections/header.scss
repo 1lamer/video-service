@@ -1,8 +1,23 @@
 
 .header {
-	margin-bottom: 45px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 999;
 
-	&__row {}
+	width: 100%;
+	min-height: 40px;
+	padding: 10px 0;
+
+	background-color: $default-back-color;
+	box-shadow: 0px 6px 27px 0px rgba(51,51,51,0.68);
+
+	&__row {
+		margin: 0 auto;
+		padding: 0 20px;
+		max-width: $maxDesktopWidth;
+	}
 
 	&__company {
 		display: flex;
@@ -17,29 +32,21 @@
 	}
 
 	&__search {}
+
+	&__account {
+		flex-shrink: 0;
+	}
 }
 
 
 @media screen and (max-width: $tableWidth) {
 	.header {
-		margin-bottom: 25px;
 
-		&__row {
-			flex-direction: column;
-		}
+		&__row { padding: 0 10px; }
 
 		&__company {
-			margin-bottom: 20px;
-		}
 
-		&__logo {
-				margin-right: 5px;
-		}
-
-		&__search {
-			display: block;
-			margin-bottom: 20px;
+			&-name { display: none; }
 		}
 	}
-
 }

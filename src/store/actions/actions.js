@@ -13,5 +13,14 @@ export default {
 
 	dSearch({commit}, search) {
 		commit('search', search)
+	},
+
+	addToMyList({commit, state}, payload) {
+		let [id, isInMyList] = payload
+
+		let content = [...state.shows, ...state.films]
+
+		content = content.filter(item => item.id === id)
+		commit('addToMyList', [content[0], isInMyList])
 	}
 }

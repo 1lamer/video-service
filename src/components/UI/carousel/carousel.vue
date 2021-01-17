@@ -1,10 +1,11 @@
 <template>
-	<div class="carousel">
+	<div class="carousel" ref="carousel">
 
 		<div
 			class="carousel__wrapper"
-			ref="carousel"
-			:style="{'transform': `translateX(${position}px)`}">
+			ref="carousel_wrapper"
+			:style="{'transform': `translateX(${position}px)`}"
+		>
 
 			<!-- Items of carousel -->
 			<slot></slot>
@@ -17,16 +18,16 @@
 			@click="switchPrev"
 			:disabled="position === 0"
 		>
-			<svg width="50" height="50">
+			<svg class="carousel__icon" width="50" height="50">
 				<use xlink:href="@/assets/img/sprite.svg#arrow-prev"></use>
 			</svg>
 		</button>
 		<button
 			class="carousel__next"
 			@click="switchNext"
-			:disabled="position <= - (carouselLength - itemsToShow) * itemWidth"
+			:disabled="position <= - (carouselLength - itemsToShow) * (itemWidth + margin)"
 		>
-			<svg width="50" height="50">
+			<svg class="carousel__icon" width="50" height="50">
 				<use xlink:href="@/assets/img/sprite.svg#arrow-next"></use>
 			</svg>
 		</button>
@@ -48,53 +49,55 @@ export default {
 	},
 	data: () => ({
 		carouselWidth: 0,
-		itemWidth: 0,
+		itemWidth: 200,
+		margin: 20,
 		position: 0,
-		itemsToScroll: 4,
-		itemsToShow: 4,
+		itemsToScroll: 0,
+		itemsToShow: 0,
 		interval: 0,
-		setInterval: null
+		setInterval: null,
 	}),
 	methods: {
-		switchPrev() {
-			const movePos = this.itemWidth * this.itemsToScroll
-			const itemsLeft = Math.abs(this.position) / this.itemWidth
-			
-			this.position+= itemsLeft >= this.itemsToShow ? movePos : itemsLeft * this.itemWidth
-
-			// Clear interval 
-			if (this.position === 0) {
-				clearInterval(this.setInterval)
-			}
+		init() {
+			this.carouselWidth = this.$refs.carousel.offsetWidth
+			this.itemsToScroll = this.itemsToShow = Math.ceil(this.carouselWidth / (this.itemWidth + this.margin))
 		},
+
+		switchPrev() {
+			const width = this.itemWidth + this.margin
+			const move = width * this.itemsToScroll
+			const itemsLeft =  Math.ceil(Math.abs(this.position) / width)
+			
+			this.position+= itemsLeft >= this.itemsToShow
+			? move
+			: itemsLeft * width
+		},
+
 		switchNext() {
-			const movePos = this.itemWidth * this.itemsToScroll
-			const initial = this.itemsToShow * this.itemWidth
-			const itemsLeft = this.carouselLength - (Math.abs(this.position) + initial) / this.itemWidth
+			const width = this.itemWidth + this.margin
+			const move = width * this.itemsToScroll
+			const initial = this.itemsToShow * width
+			const itemsLeft = this.carouselLength - Math.ceil((Math.abs(this.position) + initial) / width)
 
-			this.position-= (itemsLeft >= this.itemsToShow) ? movePos : (itemsLeft * this.itemWidth)
-
-			// Clear interval 
-			if (this.position <= - (this.carouselLength - this.itemsToShow) * this.itemWidth) {
-				clearInterval(this.setInterval)
-			}
+			this.position-= itemsLeft >= this.itemsToShow
+			? move
+			: itemsLeft * width
 		}
 	},
-	created() {
-
-	},
 	mounted() {
-		this.carouselWidth = this.$refs.carousel.clientWidth
-		this.itemWidth = this.carouselWidth / this.itemsToShow
+		window.addEventListener('resize', this.init)
+		this.init()
 		
 		if (this.interval > 0) {
 			this.setInterval = setInterval(() => {
 				this.switchNext()
 			}, this.interval)
 		}
+
 	},
 	beforeDestroy() {
 		clearInterval(this.setInterval)
+		window.removeEventListener('resize', this.init())
 	}
 }
 </script>
@@ -103,19 +106,36 @@ export default {
 	.carousel {
 		position: relative;
 
+		margin: 0 auto;
+
 		overflow: hidden;
+
+		@media screen and (max-width: $maxDesktopWidth) {
+	    max-width: 1100px;// 1080px;
+	  }
+	  @media screen and (max-width: $desktopWidth) {
+	    max-width: 880px;// 860px;
+	  }
+	  @media screen and (max-width: $smDesktopWidth) {
+	    max-width: 660px;//640px;
+	  }
+	  @media screen and (max-width: $tableWidth) {
+	    max-width: 440px;//420px;
+	  }
+	  @media screen and (max-width: $phoneWidth) {
+	    max-width: 220px;//200px;
+	  }
 
 		&__wrapper {
 			display: flex;
-
-			margin: 0 -10px;
+			padding-left: 10px;
 
 			transition: .5s ease all;
 		}
 
 		&__prev, &__next {
 			position: absolute;
-			top: 40%;
+			top: 38%;
 
 			background-color: rgba(0, 0, 0, 0.6);
 			border: none;
@@ -141,6 +161,10 @@ export default {
 
 		&__next {
 			right: 0;
+		}
+
+		&__icon {
+			fill: #fff;
 		}
 	}
 </style>

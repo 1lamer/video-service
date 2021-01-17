@@ -27,10 +27,12 @@ export default {
 		...mapState(['trending'])
 	},
 	methods: {
-		...mapActions(['getTrending'])
+		...mapActions(['getTrending', 'getShows', 'getFilms'])
 	},
 	created() {
 		this.getTrending()
+		this.getFilms()
+		this.getShows()
 	}
 }
 </script>

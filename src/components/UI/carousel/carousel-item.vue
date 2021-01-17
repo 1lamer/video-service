@@ -18,9 +18,10 @@ export default {
 </script>
 
 <style lang="scss">
-
+	
 	.carousel-item {
-		min-width: 300px;
-		padding: 0 10PX;
+		min-width: 200px;
+		margin-right: 20px;
 	}
+
 </style>

@@ -1,7 +1,7 @@
 <template>
 	<section class="trending">
 
-		<h2 class="trending__title title">&#128293; Trending</h2>
+		<h2 class="trending__title title">Trending</h2>
 		
 		<ul class="trending__list">
 			<carousel 
@@ -40,3 +40,20 @@ export default {
 	}
 }
 </script>
+
+
+<style lang="scss">
+
+	.trending {
+
+		&__title {}
+
+		&__list {
+			.item {
+				margin-right: 0;
+				margin-bottom: 0;
+			}
+		}
+	}
+
+</style>

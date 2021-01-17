@@ -4,37 +4,127 @@
 			"name": "The owners",
 			"description": "Sinister characters converge around a young man devoted to protecting those he loves in a postwar backwoods town teeming with corruption and brutality.",
 			"image": "films/owners.jpg",
-			"genre": "horror"
+			"genre": "horror",
+			"id": "108",
+			"isInMyList": false,
+			"type": "movie"
 		},
 		{
 			"name": "Tent",
 			"description": "Armed with only one word, Tenet, and fighting for the survival of the entire world, a Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.",
 			"image": "films/tenet.jpg",
-			"genre": "fantasy"
+			"genre": "fantasy",
+			"id": "112",
+			"isInMyList": false,
+			"type": "movie"
 		},
 		{
 			"name": "Batman",
 			"description": "New Batman as Pattinson is coming! Watch the trailer!",
 			"image": "films/batman.jpg",
-			"genre": "action"
+			"genre": "action",
+			"id": "113",
+			"isInMyList": false,
+			"type": "movie"
 		},
 		{
 			"name": "The Devil All the Time",
 			"description": "Sinister characters converge around a young man devoted to protecting those he loves in a postwar backwoods town teeming with corruption and brutality.",
 			"image": "films/devilallthetime.jpg",
-			"genre": "drama"
+			"genre": "drama",
+			"id": "122",
+			"isInMyList": false,
+			"type": "movie"
 		},
 		{
 			"name": "Dolittle",
 			"description": "An American expat tries to sell off his highly profitable marijuana empire in London, triggering plots, schemes, bribery and blackmail in an attempt to steal his domain out from under him.",
 			"image": "films/dolittle.jpg",
-			"genre": "comedy"
+			"genre": "comedy",
+			"id": "131",
+			"isInMyList": false,
+			"type": "movie"
 		},
 		{
 			"name": "Dreamkatcher",
 			"description": "Sinister characters converge around a young man devoted to protecting those he loves in a postwar backwoods town teeming with corruption and brutality.",
 			"image": "films/dreamkatcher.jpg",
-			"genre": "horror"
+			"genre": "horror",
+			"id": "139",
+			"isInMyList": false,
+			"type": "movie"
+		},
+		{
+			"name": "Biohackers",
+			"description": "Armed with only one word, Tenet, and fighting for the survival of the entire world, a Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.",
+			"image": "films/biohackers.jpg",
+			"genre": "drama",
+			"id": "199",
+			"isInMyList": false,
+			"type": "show"
+		},
+		{
+			"name": "Curon",
+			"description": "New Batman as Pattinson is coming! Watch the trailer!",
+			"image": "films/curon.jpg",
+			"genre": "thriller",
+			"id": "200",
+			"isInMyList": false,
+			"type": "show"
+		},
+		{
+			"name": "Emily in Paris",
+			"description": "An American expat tries to sell off his highly profitable marijuana empire in London, triggering plots, schemes, bribery and blackmail in an attempt to steal his domain out from under him.",
+			"image": "films/emilyinparis.jpg",
+			"genre": "comedy",
+			"id": "209",
+			"isInMyList": false,
+			"type": "show"
+		},
+		{
+			"name": "The Letter for the King",
+			"description": "Sinister characters converge around a young man devoted to protecting those he loves in a postwar backwoods town teeming with corruption and brutality.",
+			"image": "films/letterforking.jpg",
+			"genre": "adventure",
+			"id": "225",
+			"isInMyList": false,
+			"type": "show"
+		},
+		{
+			"name": "The Woods",
+			"description": "Sinister characters converge around a young man devoted to protecting those he loves in a postwar backwoods town teeming with corruption and brutality.",
+			"image": "films/thewoods.jpg",
+			"genre": "mystery",
+			"id": "258",
+			"isInMyList": false,
+			"type": "show"
+		},
+		{
+			"name": "Utopia",
+			"description": "An American expat tries to sell off his highly profitable marijuana empire in London, triggering plots, schemes, bribery and blackmail in an attempt to steal his domain out from under him.",
+			"image": "films/utopia.jpg",
+			"genre": "drama",
+			"id": "266",
+			"isInMyList": false,
+			"type": "show"
+		},
+		{
+			"name": "The Valhalla Murders",
+			"description": "Sinister characters converge around a young man devoted to protecting those he loves in a postwar backwoods town teeming with corruption and brutality.",
+			"image": "films/valhallamurders.jpg",
+			"genre": "mystery",
+			"id": "287",
+			"isInMyList": false,
+			"type": "show"
+		},
+		{
+			"name": "Freud",
+			"description": "Sinister characters converge around a young man devoted to protecting those he loves in a postwar backwoods town teeming with corruption and brutality.",
+			"image": "films/freud.jpg",
+			"genre": "thriller",
+			"id": "299",
+			"isInMyList": false,
+			"type": "show"
 		}
 	],
 	"my-list": [
@@ -42,31 +132,46 @@
 			"name": "Extraction",
 			"description": "Sinister characters converge around a young man devoted to protecting those he loves in a postwar backwoods town teeming with corruption and brutality.",
 			"image": "films/extraction.jpg",
-			"genre": "action"
+			"genre": "action",
+			"id": "147",
+			"isInMyList": true,
+			"type": "movie"
 		},
 		{
 			"name": "Tent",
 			"description": "Armed with only one word, Tenet, and fighting for the survival of the entire world, a Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.",
 			"image": "films/tenet.jpg",
-			"genre": "fantasy"
+			"genre": "fantasy",
+			"id": "112",
+			"isInMyList": true,
+			"type": "movie"
 		},
 		{
 			"name": "Batman",
 			"description": "New Batman as Pattinson is coming! Watch the trailer!",
 			"image": "films/batman.jpg",
-			"genre": "action"
+			"genre": "action",
+			"id": "113",
+			"isInMyList": true,
+			"type": "movie"
 		},
 		{
 			"name": "Dreamkatcher",
 			"description": "Sinister characters converge around a young man devoted to protecting those he loves in a postwar backwoods town teeming with corruption and brutality.",
 			"image": "films/dreamkatcher.jpg",
-			"genre": "horror"
+			"genre": "horror",
+			"id": "139",
+			"isInMyList": true,
+			"type": "movie"
 		},
 		{
 			"name": "The owners",
 			"description": "Sinister characters converge around a young man devoted to protecting those he loves in a postwar backwoods town teeming with corruption and brutality.",
 			"image": "films/owners.jpg",
-			"genre": "horror"
+			"genre": "horror",
+			"id": "108",
+			"isInMyList": true,
+			"type": "movie"
 		}
 	],
 	"films": [
@@ -74,55 +179,82 @@
 			"name": "Tent",
 			"description": "Armed with only one word, Tenet, and fighting for the survival of the entire world, a Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.",
 			"image": "films/tenet.jpg",
-			"genre": "fantasy"
+			"genre": "fantasy",
+			"id": "112",
+			"isInMyList": false,
+			"type": "movie"
 		},
 		{
 			"name": "Batman",
 			"description": "New Batman as Pattinson is coming! Watch the trailer!",
 			"image": "films/batman.jpg",
-			"genre": "action"
+			"genre": "action",
+			"id": "113",
+			"isInMyList": false,
+			"type": "movie"
 		},
 		{
 			"name": "The Gentlemen",
 			"description": "An American expat tries to sell off his highly profitable marijuana empire in London, triggering plots, schemes, bribery and blackmail in an attempt to steal his domain out from under him.",
 			"image": "films/gentlman.jpg",
-			"genre": "comedy"
+			"genre": "comedy",
+			"id": "175",
+			"isInMyList": false,
+			"type": "movie"
 		},
 		{
 			"name": "The Devil All the Time",
 			"description": "Sinister characters converge around a young man devoted to protecting those he loves in a postwar backwoods town teeming with corruption and brutality.",
 			"image": "films/devilallthetime.jpg",
-			"genre": "drama"
+			"genre": "drama",
+			"id": "122",
+			"isInMyList": false,
+			"type": "movie"
 		},
 		{
 			"name": "Dolittle",
 			"description": "An American expat tries to sell off his highly profitable marijuana empire in London, triggering plots, schemes, bribery and blackmail in an attempt to steal his domain out from under him.",
 			"image": "films/dolittle.jpg",
-			"genre": "comedy"
+			"genre": "comedy",
+			"id": "131",
+			"isInMyList": false,
+			"type": "movie"
 		},
 		{
 			"name": "Dreamkatcher",
 			"description": "Sinister characters converge around a young man devoted to protecting those he loves in a postwar backwoods town teeming with corruption and brutality.",
 			"image": "films/dreamkatcher.jpg",
-			"genre": "horror"
+			"genre": "horror",
+			"id": "139",
+			"isInMyList": false,
+			"type": "movie"
 		},
 		{
 			"name": "Avengers: Endgame",
 			"description": "An American expat tries to sell off his highly profitable marijuana empire in London, triggering plots, schemes, bribery and blackmail in an attempt to steal his domain out from under him.",
 			"image": "films/avengers.jpg",
-			"genre": "fantasy"
+			"genre": "fantasy",
+			"id": "195",
+			"isInMyList": false,
+			"type": "movie"
 		},
 		{
 			"name": "The owners",
 			"description": "Sinister characters converge around a young man devoted to protecting those he loves in a postwar backwoods town teeming with corruption and brutality.",
 			"image": "films/owners.jpg",
-			"genre": "horror"
+			"genre": "horror",
+			"id": "108",
+			"isInMyList": false,
+			"type": "movie"
 		},
 		{
 			"name": "Extraction",
 			"description": "Sinister characters converge around a young man devoted to protecting those he loves in a postwar backwoods town teeming with corruption and brutality.",
 			"image": "films/extraction.jpg",
-			"genre": "action"
+			"genre": "action",
+			"id": "147",
+			"isInMyList": false,
+			"type": "movie"
 		}
 	],
   "shows": [
@@ -130,55 +262,82 @@
 			"name": "Biohackers",
 			"description": "Armed with only one word, Tenet, and fighting for the survival of the entire world, a Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.",
 			"image": "films/biohackers.jpg",
-			"genre": "drama"
+			"genre": "drama",
+			"id": "199",
+			"isInMyList": false,
+			"type": "show"
 		},
 		{
 			"name": "Curon",
 			"description": "New Batman as Pattinson is coming! Watch the trailer!",
 			"image": "films/curon.jpg",
-			"genre": "thriller"
+			"genre": "thriller",
+			"id": "200",
+			"isInMyList": false,
+			"type": "show"
 		},
 		{
 			"name": "Emily in Paris",
 			"description": "An American expat tries to sell off his highly profitable marijuana empire in London, triggering plots, schemes, bribery and blackmail in an attempt to steal his domain out from under him.",
 			"image": "films/emilyinparis.jpg",
-			"genre": "comedy"
+			"genre": "comedy",
+			"id": "209",
+			"isInMyList": false,
+			"type": "show"
 		},
 		{
 			"name": "The Letter for the King",
 			"description": "Sinister characters converge around a young man devoted to protecting those he loves in a postwar backwoods town teeming with corruption and brutality.",
 			"image": "films/letterforking.jpg",
-			"genre": "adventure"
+			"genre": "adventure",
+			"id": "225",
+			"isInMyList": false,
+			"type": "show"
 		},
 		{
 			"name": "The Wilds",
 			"description": "An American expat tries to sell off his highly profitable marijuana empire in London, triggering plots, schemes, bribery and blackmail in an attempt to steal his domain out from under him.",
 			"image": "films/thewilds.jpg",
-			"genre": "drama"
+			"genre": "drama",
+			"id": "244",
+			"isInMyList": false,
+			"type": "show"
 		},
 		{
 			"name": "The Woods",
 			"description": "Sinister characters converge around a young man devoted to protecting those he loves in a postwar backwoods town teeming with corruption and brutality.",
 			"image": "films/thewoods.jpg",
-			"genre": "mystery"
+			"genre": "mystery",
+			"id": "258",
+			"isInMyList": false,
+			"type": "show"
 		},
 		{
 			"name": "Utopia",
 			"description": "An American expat tries to sell off his highly profitable marijuana empire in London, triggering plots, schemes, bribery and blackmail in an attempt to steal his domain out from under him.",
 			"image": "films/utopia.jpg",
-			"genre": "drama"
+			"genre": "drama",
+			"id": "266",
+			"isInMyList": false,
+			"type": "show"
 		},
 		{
 			"name": "The Valhalla Murders",
 			"description": "Sinister characters converge around a young man devoted to protecting those he loves in a postwar backwoods town teeming with corruption and brutality.",
 			"image": "films/valhallamurders.jpg",
-			"genre": "mystery"
+			"genre": "mystery",
+			"id": "287",
+			"isInMyList": false,
+			"type": "show"
 		},
 		{
 			"name": "Freud",
 			"description": "Sinister characters converge around a young man devoted to protecting those he loves in a postwar backwoods town teeming with corruption and brutality.",
 			"image": "films/freud.jpg",
-			"genre": "thriller"
+			"genre": "thriller",
+			"id": "299",
+			"isInMyList": false,
+			"type": "show"
 		}
   ],
   "genres": ["horror", "action", "comedy", "fantasy", "drama", "adventure", "documentary", "thriller", "mystery"]

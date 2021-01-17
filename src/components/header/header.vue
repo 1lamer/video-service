@@ -7,7 +7,7 @@
 				<svg class="header__logo" width="40" height="40">
 					<use xlink:href="@/assets/img/sprite.svg#logo"></use>
 				</svg>
-				Videoservice
+				<span class="header__company-name">Videoservice</span>
 			</a>
 
 			<search />

@@ -1,25 +1,28 @@
 <template>
 
-	<li class="trending__item">
-		<a href="#" class="trending__link">
-				<img :src="require('@/assets/img/' + item.image)" alt="poster" class="trending__poster">
+	<li class="list__item item">
+		<a class="item__link">
+			<img :src="require('@/assets/img/' + item.image)" alt="poster" class="item__poster">
 
-				<p class="trending__description">
-						{{item.description}}
-				</p>
+			<p class="item__description">
+					{{item.description}}
+			</p>
 
-			<h3 class="trending__name">{{item.name}}</h3>
+			<h3 class="item__name">{{item.name}}</h3>
+
+			<favorite :id="item.id" :isInMyList="item.isInMyList"/>
 		</a>
 	</li>
-	<!-- /trending__item -->
 
 </template>
 
 <script>
+import favorite from '@/components/UI/favorite'
 
 export default {
-	name: 'Trending-item',
+	name: 'item',
 	components: {
+		favorite
 	},
 	props: {
 		item: {
@@ -32,3 +35,4 @@ export default {
 	})
 }
 </script>
+

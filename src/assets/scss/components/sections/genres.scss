@@ -7,10 +7,10 @@
 	&__item {
 		flex-basis: 25%;
 
-		max-width: 280px;
+		max-width: 200px;
 		border-radius: 6px;
 
-		@include clickAnimation;
+		@include buttonAnimation;
 	}
 
 	&__select {
