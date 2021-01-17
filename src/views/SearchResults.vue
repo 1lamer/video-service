@@ -8,7 +8,7 @@
 			<item v-for="(item, index) in searchResults(search)" :key="index" :item="item"/>
 		</ul>
 
-		<p class="search-results__notFound" v-show="!searchResults(search).length">It was nothing found ¯\_(ツ)_/¯</p>
+		<notFound v-show="!searchResults(search).length"/>
 	</section>
 
 </template>
@@ -17,11 +17,12 @@
 <script>
 import {mapActions, mapGetters, mapState} from 'vuex'
 import item from '@/components/app-content/item'
-
+import notFound from '@/components/UI/notFound'
 export default {
 	name: 'SearchResults',
 	components: {
 		item,
+		notFound
 	},
 	computed: {
 		...mapGetters(['searchResults']),

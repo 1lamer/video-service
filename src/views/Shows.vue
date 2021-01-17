@@ -9,7 +9,47 @@
       <item v-for="(item, index) in filtered(this.$route.name, this.selectedGenres)" :key="index" :item="item" />
     </ul>
 
-    <!-- <ul class="shows__list">
+    <notFound v-show="!filtered(this.$route.name, this.selectedGenres).length"/>
+    
+  </section>
+</template>
+
+
+<script>
+import {mapActions, mapGetters} from 'vuex'
+import genres from '@/components/app-content/genres'
+import item from '@/components/app-content/item'
+import notFound from '@/components/UI/notFound'
+
+export default {
+  name: 'Channels',
+  components: {
+    item,
+    genres,
+    notFound
+  },
+  data: () => ({
+    selectedGenres: [],
+  }),
+  computed: {
+    ...mapGetters(['filtered']),
+  },
+  methods: {
+    ...mapActions(['getShows']),
+  },
+  created() {
+    this.getShows()
+  },
+  beforeDestroy() {
+    // Clear filtered state in order to display default content in onther pages
+    this.$store.state.filtered = []
+  }
+}
+</script>
+
+<!-- Additional features in future -->
+
+<!-- <ul class="shows__list">
 
       <li class="shows__item shows__item--cbs">
 
@@ -129,38 +169,3 @@
         
       </li>
     </ul> -->
-
-
-  </section>
-</template>
-
-
-<script>
-import {mapActions, mapGetters} from 'vuex'
-import genres from '@/components/app-content/genres'
-import item from '@/components/app-content/item'
-
-export default {
-  name: 'Channels',
-  components: {
-    item,
-    genres,
-  },
-  data: () => ({
-    selectedGenres: [],
-  }),
-  computed: {
-    ...mapGetters(['filtered']),
-  },
-  methods: {
-    ...mapActions(['getShows']),
-  },
-  created() {
-    this.getShows()
-  },
-  beforeDestroy() {
-    // Clear filtered state in order to display default content in onther pages
-    this.$store.state.filtered = []
-  }
-}
-</script>
