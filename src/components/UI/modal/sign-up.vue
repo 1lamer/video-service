@@ -144,7 +144,7 @@
 						email: this.email,
 						password: this.password
 					}
-					console.log(user)
+					this.$store.dispatch('signUp', user)
 
 					// Done
 					this.reset()

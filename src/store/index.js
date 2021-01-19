@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+// Modules
+import auth from '@/store/auth'
+
 import mutations from '@/store/mutations/mutations'
 import getters from '@/store/getters/getters'
 import commonActions from '@/store/actions/actions'
@@ -23,5 +26,7 @@ export default new Vuex.Store({
 	mutations,
 	actions,
 	getters,
-	modules: {}
+	modules: {
+		auth
+	}
 })

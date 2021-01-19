@@ -2,16 +2,24 @@
 	<div class="header__account">
 		<button
 			type="button"
-			class="button button--rect"
+			class="header__button button button--rect"
 			@click="signIn = !signIn"
+			v-if="!authorized"
 		>
-			<span v-if="!authorized">Sign in</span>
+			<span>Sign in</span>
+		</button>
 
-			<svg width="20" height="20" v-else>
+		<button
+			type="button"
+			class="header__button button button--rect"
+			@click="signIn = !signIn"
+			v-else
+		>
+			<svg class="header__icon" width="20" height="20" >
 				<use xlink:href="@/assets/img/sprite.svg#user"></use>
 			</svg>
-
 		</button>
+
 		<signIn
 			v-show="signIn"
 			@replace="replace()"

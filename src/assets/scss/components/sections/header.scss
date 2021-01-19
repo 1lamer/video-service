@@ -27,6 +27,12 @@
 		font-weight: 500;
 	}
 
+	&__button {
+		&:hover { 
+			.header__icon { fill: #fff; }
+		}
+	}
+
 	&__logo {
 			margin-right: 12px;
 	}
@@ -35,6 +41,10 @@
 
 	&__account {
 		flex-shrink: 0;
+	}
+
+	&__icon {
+		fill: $primary-color;
 	}
 }
 
