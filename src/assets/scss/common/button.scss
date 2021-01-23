@@ -11,11 +11,10 @@
 
 	@include buttonAnimation;
 
-
 	&:hover, &:focus {
 		background-color: $primary-color;
 
-		color: #fff ;
+		color: #fff;
 	}
 
 	&--simple { 

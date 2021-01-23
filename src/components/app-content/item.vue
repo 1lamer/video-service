@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import favorite from '@/components/UI/favorite'
+import favorite from '@/components/UI/favorite/favorite'
 
 export default {
 	name: 'item',

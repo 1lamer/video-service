@@ -27,6 +27,18 @@
 		font-weight: 500;
 	}
 
+	&__button {
+		position: relative;
+
+		&:hover, &:focus { 
+			.header__icon { fill: #fff; }
+		}
+
+		&--authorized { 
+			&:active { transform: none; }
+		}
+	}
+
 	&__logo {
 			margin-right: 12px;
 	}
@@ -35,6 +47,10 @@
 
 	&__account {
 		flex-shrink: 0;
+	}
+
+	&__icon {
+		fill: $primary-color;
 	}
 }
 

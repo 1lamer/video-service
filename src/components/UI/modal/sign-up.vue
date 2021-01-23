@@ -97,6 +97,7 @@
 
 
 <script>
+	import {mapGetters, mapMutations, mapActions} from 'vuex'
 	import { required, minLength, email, sameAs } from 'vuelidate/lib/validators'
 
 	import modal from '@/components/UI/modal/modal.vue'
@@ -112,8 +113,8 @@
 				repeatPassword: '',
 				email: '',
 				exit() {
-					this.$emit('close')
 					this.reset()
+					this.$emit('close')
 				}
 			}
 		},
@@ -135,8 +136,14 @@
 				sameAsPassword: sameAs('password')
 			}
 		},
+		computed: {
+			...mapGetters(['errorMessage', 'errorCode', 'message'])
+		},
 		methods: {
-			onSubmit() {
+			...mapMutations(['clearErrorCode', 'setMessage', 'changeIsShow']),
+			...mapActions(['signUp']),
+
+			async onSubmit() {
 				this.$v.$touch()
 				if (!this.$v.$invalid) {
 					const user = {
@@ -144,11 +151,25 @@
 						email: this.email,
 						password: this.password
 					}
-					console.log(user)
+
+					try	{
+						await this.signUp(user)
+					} catch(e) { console.log(e) }
 
 					// Done
-					this.reset()
-					this.$emit('close')
+					if (this.errorCode === '') {
+						this.reset()
+						this.$emit('replace')
+
+						// Displaying message to user about successful sign up
+						this.setMessage('You have signed up')
+						this.changeIsShow(true)
+					} else {
+						// Displaying message to user about mistake
+						this.setMessage(this.errorMessage)
+						this.changeIsShow(true)
+						this.clearErrorCode()
+					}
 				}
 			},
 			reset() {

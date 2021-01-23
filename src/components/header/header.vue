@@ -3,12 +3,12 @@
 					
 		<div class="header__row row">
 
-			<a href="#" class="header__company">
+			<router-link to='/' class="header__company">
 				<svg class="header__logo" width="40" height="40">
 					<use xlink:href="@/assets/img/sprite.svg#logo"></use>
 				</svg>
 				<span class="header__company-name">Videoservice</span>
-			</a>
+			</router-link>
 
 			<search />
 
@@ -21,7 +21,7 @@
 
 
 <script>
-import search from '@/components/UI/search'
+import search from '@/components/UI/search/search'
 import account from '@/components/header/account'
 
 export default {

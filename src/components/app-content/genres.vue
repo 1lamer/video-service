@@ -65,8 +65,11 @@ export default {
 			return this.selectedGenres.includes(genre) ? true : false
 		}
 	},
-	created() {
-		this.getGenres()
+	async created() {
+		try {
+			await this.getGenres()
+		} catch(e) { console.log(e) }
+		
 	},
 	beforeDestroy() {
 		this.dFiltered([[], this.$route.name])
@@ -83,7 +86,7 @@ export default {
 	&__list {}
 
 	&__item {
-		box-shadow: 5px 5px 16px -1px #000000;
+		box-shadow: 2px 5px 7px -1px #333333;
 	}
 
 	&__select {
