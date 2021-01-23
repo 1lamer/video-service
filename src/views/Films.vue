@@ -11,7 +11,7 @@
 
 		<messageOfAbsence v-show="!filtered(this.$route.name, this.selectedGenres).length">
 			It was nothing found ¯\_(ツ)_/¯
-    </messageOfAbsence>
+		</messageOfAbsence>
 
 	</section>
 </template>
@@ -20,7 +20,7 @@
 import {mapActions, mapGetters} from 'vuex'
 import item from '@/components/app-content/item'
 import genres from '@/components/app-content/genres'
-import messageOfAbsence from '@/components/UI/message-of-absence'
+import messageOfAbsence from '@/components/UI/message-of-absence/message-of-absence'
 
 export default {
 	name: 'Films',
@@ -38,8 +38,10 @@ export default {
 	methods: {
 		...mapActions(['getFilms']),
 	},
-	created() {
-		this.getFilms()
+	async created() {
+		try {
+			await this.getFilms()
+		} catch(e) { console.log(e) } 
 	},
 	beforeDestroy() {
 		// Clear filtered state in order to display default content in onther pages

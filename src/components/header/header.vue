@@ -21,7 +21,7 @@
 
 
 <script>
-import search from '@/components/UI/search'
+import search from '@/components/UI/search/search'
 import account from '@/components/header/account'
 
 export default {

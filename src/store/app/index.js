@@ -2,12 +2,12 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 // Modules
-import auth from '@/store/auth'
+import auth from '@/store/auth/auth'
 
-import mutations from '@/store/mutations/mutations'
-import getters from '@/store/getters/getters'
-import commonActions from '@/store/actions/actions'
-import apiRequests from '@/store/actions/api-requests'
+import mutations from '@/store/app/mutations/mutations'
+import getters from '@/store/app/getters/getters'
+import commonActions from '@/store/app/actions/actions'
+import apiRequests from '@/store/app/actions/api-requests'
 
 const actions = {...commonActions, ...apiRequests}
 

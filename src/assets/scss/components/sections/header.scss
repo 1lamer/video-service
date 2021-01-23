@@ -28,8 +28,14 @@
 	}
 
 	&__button {
-		&:hover { 
+		position: relative;
+
+		&:hover, &:focus { 
 			.header__icon { fill: #fff; }
+		}
+
+		&--authorized { 
+			&:active { transform: none; }
 		}
 	}
 

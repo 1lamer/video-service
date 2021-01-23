@@ -16,6 +16,14 @@
 			<!-- /main -->
 
 			<Footer />
+
+			<snackbar
+				slot="snackbar"
+				:isShow="isShow" 
+				@isShow="changeIsShow($event)"
+			>
+        {{message}}
+      </snackbar>
 			
 		</div>
 		<!-- /container -->
@@ -25,17 +33,27 @@
 
 
 <script>
+	import {mapGetters, mapMutations} from 'vuex'
+	import Header from '@/components/header/header'
+	import Nav from '@/components/nav/nav'
+	import Footer from '@/components/footer/footer'
+	import snackbar from '@/components/UI/snackbar/snackbar.vue'
 
-import Header from '@/components/header/header'
-import Nav from '@/components/nav/nav'
-import Footer from '@/components/footer/footer'
-
-export default {
-	name: 'App',
-	components: {
-		Header,
-		Footer,
-		Nav
+	export default {
+		name: 'App',
+		components: {
+			Header,
+			Footer,
+			Nav,
+			snackbar
+		},
+		data: () => ({
+		}),
+		computed: {
+			...mapGetters(['message', 'isShow']),
+		},
+		methods: {
+			...mapMutations(['changeIsShow'])
+		}
 	}
-}
 </script>

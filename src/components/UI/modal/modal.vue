@@ -22,9 +22,11 @@
             <slot name="footer"></slot>
           </button>
         </div>
-
       </div>
       <!-- /modal__wrapper -->
+
+      <slot name="snackbar"></slot>
+
     </div>
     <!-- /modal -->
   </transition>
@@ -33,12 +35,16 @@
 <script>
 
 export default {
+  components: {
+  },
   props: {
     title: {
       type: String,
       required: true
     },
   },
+  data: () => ({
+  }),
   mounted() {
     document.body.addEventListener('keyup', e => {
       if (e.keyCode === 27) this.$emit('close')
@@ -130,8 +136,6 @@ export default {
     &:hover, &:focus {
       &::after { width: 100%; }
     }
-
-    
   }
 }
 

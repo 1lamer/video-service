@@ -29,10 +29,13 @@ export default {
 	methods: {
 		...mapActions(['getTrending', 'getShows', 'getFilms'])
 	},
-	created() {
-		this.getTrending()
-		this.getFilms()
-		this.getShows()
+	async created() {
+		try {
+			await this.getTrending()
+			await this.getFilms()
+			await this.getShows()
+		} catch(e) { console.log(e) }
+		
 	}
 }
 </script>

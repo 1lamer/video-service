@@ -15,9 +15,9 @@
 </template>
 
 <script>
-import {mapState, mapGetters, mapActions} from 'vuex'
+import {mapState, mapActions} from 'vuex'
 import item from '@/components/app-content/item'
-import messageOfAbsence from '@/components/UI/message-of-absence'
+import messageOfAbsence from '@/components/UI/message-of-absence/message-of-absence'
 
 export default {
 	name: 'myList',
