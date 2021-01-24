@@ -33,6 +33,6 @@ new Vue({
   render: h => h(App),
   created() {
 		firebase.initializeApp(firebaseInit.firebaseConfig)
-		firebaseInit.authState()
+		// firebaseInit.authState()
   }
 }).$mount('#app')

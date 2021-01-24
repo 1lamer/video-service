@@ -4,14 +4,13 @@
 		<trending :trending="trending"/>
 
 		<myList />
-
 		
 	</section>
 </template>
 
 <script>
-import trending from '@/components/app-content/trending/trending'
-import myList from '@/components/app-content/my-list/my-list'
+import trending from '@/components/app-content/trending'
+import myList from '@/components/app-content/my-list'
 import { mapState, mapActions } from 'vuex'
 
 export default {

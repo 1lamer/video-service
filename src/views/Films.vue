@@ -6,7 +6,11 @@
 		<h2 class="films__title title">All movies</h2>
 		
 		<ul class="films__list list">
-			<item v-for="(item, index) in filtered(this.$route.name, this.selectedGenres)" :key="index" :item="item" />
+			<item
+				v-for="(item, index) in filtered(this.$route.name, this.selectedGenres)"
+				:key="index"
+				:item="item"
+			/>
 		</ul>
 
 		<messageOfAbsence v-show="!filtered(this.$route.name, this.selectedGenres).length">
