@@ -4,22 +4,22 @@ export default {
 		let filteredContent = []
 		let filteredIds = []
 		let [genresIds, routeName] = payload
+		
+		filteredContent = [
+			// Filter an array of preceding filtered content to check are they suited to new genres
+			...filteredContent.filter(content => checkIds(content.genre_ids, genresIds)),
 
-		genresIds.forEach(genreId => {
-			filteredContent = [
-				// Filter an array of preceding filtered content to check are they suited to new genres
-				...filteredContent,
-				// ...filteredContent.filter(content => content.genre_ids.includes(genreId)),
-
-				...state.[routeName].filter(content => {
-					// Checking is there the same item (film or show) in filtered list
-					if (content.genre_ids.includes(genreId) && !filteredIds.includes(content.id)) {
-						filteredIds.push(content.id)
-						return true
-					}
-				})
-			]
-		})
+			...state.[routeName].filter(content => {
+				/*
+					Checking is there the same item (film or show) in filtered list
+				*/
+				if (checkIds(content.genre_ids, genresIds) && !filteredIds.includes(content.id)) {
+					filteredIds.push(content.id)
+					return true
+				}
+			})
+		]
+		
 		commit('filtered', filteredContent)
 	},
 
@@ -35,4 +35,15 @@ export default {
 		content = content.filter(item => item.id === id)
 		commit('addToMyList', [content[0], isInMyList])
 	}
+}
+
+// Checking are there all content ids in the genresIds
+function checkIds(contentIds, genresIds) {
+	const length = genresIds.length
+	let count = 0
+
+	contentIds.forEach(id => {
+		if (genresIds.includes(id)) count++
+	})
+	return count === length
 }

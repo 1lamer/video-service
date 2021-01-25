@@ -59,7 +59,7 @@ export default {
 	}),
 	methods: {
 		init() {
-			this.carouselWidth = this.$refs.carousel.offsetWidth
+			if (this.$refs.carousel.offsetWidth) this.carouselWidth = this.$refs.carousel.offsetWidth
 			this.itemsToScroll = this.itemsToShow = Math.ceil(this.carouselWidth / (this.itemWidth + this.margin))
 		},
 
