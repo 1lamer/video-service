@@ -3,17 +3,22 @@ export default {
 	dFiltered({commit, state}, payload) {
 		let filteredContent = []
 		let filteredIds = []
-		let id
 		let [genresIds, routeName] = payload
 
 		genresIds.forEach(genreId => {
-			filteredContent = [...filteredContent, ...state.[routeName].filter(content => {
-				// Checking is there the same item (film or show) in filtered list
-				if (content.genre_ids.includes(genreId) && !filteredIds.includes(content.id)) {
-					filteredIds.push(content.id)
-					return true
-				}
-			})]
+			filteredContent = [
+				// Filter an array of preceding filtered content to check are they suited to new genres
+				...filteredContent,
+				// ...filteredContent.filter(content => content.genre_ids.includes(genreId)),
+
+				...state.[routeName].filter(content => {
+					// Checking is there the same item (film or show) in filtered list
+					if (content.genre_ids.includes(genreId) && !filteredIds.includes(content.id)) {
+						filteredIds.push(content.id)
+						return true
+					}
+				})
+			]
 		})
 		commit('filtered', filteredContent)
 	},
