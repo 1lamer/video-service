@@ -7,14 +7,14 @@
 
 			<li
 				class="genres__item list__item"
-				v-for="genre in genres" :key="genre"
+				v-for="genre in genres" :key="genre.id"
 			>
 				<button
 					class="genres__select"
-					:class="{selected: isSelected(genre)}"
-					@click="filter(genre)"
+					:class="{selected: isSelected(genre.id)}"
+					@click="filter(genre.id)"
 				>
-					<span class="genres__name">{{genre}}</span>
+					<span class="genres__name">{{genre.name}}</span>
 				</button>
 			</li>
 
@@ -43,26 +43,26 @@ export default {
 	methods: {
 		...mapActions(['getGenres', 'dFiltered']),
 
-		filter(genre) {
+		filter(genreId) {
 			/*
-				Checking for exsisting of genre in "genres array"
-				If yes, then the genre will be removed from array and
-				in dispatch func will be passed the array without this genre
+				Checking for exsisting of genreId in "genreIds array"
+				If yes, then the genreId will be removed from array and
+				in dispatch func will be passed the array without this genreId
 			*/ 
-			if (this.selectedGenres.includes(genre)) {
-				const id = this.selectedGenres.indexOf(genre)
+			if (this.selectedGenres.includes(genreId)) {
+				const id = this.selectedGenres.indexOf(genreId)
 				this.selectedGenres.splice(id, 1)
 				this.dFiltered([this.selectedGenres, this.$route.name])
 				this.$emit('selectedGenres', this.selectedGenres)
 				return
 			}
-			this.selectedGenres.push(genre)
-			this.$emit('selectedGenres', this.selectedGenres)
+			this.selectedGenres.push(genreId)
 			this.dFiltered([this.selectedGenres, this.$route.name])
+			this.$emit('selectedGenres', this.selectedGenres)
 		},
 
-		isSelected(genre) {
-			return this.selectedGenres.includes(genre) ? true : false
+		isSelected(genreId) {
+			return this.selectedGenres.includes(genreId) ? true : false
 		}
 	},
 	async created() {
