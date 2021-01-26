@@ -6,10 +6,11 @@ import store from '@/store/app'
 // Plugins
 import Vuelidate from 'vuelidate'
 import messagePlugin from '@/utils/message-plugin'
-
+import debounce from '@/utils/debounce'
 
 Vue.use(Vuelidate)
 Vue.use(messagePlugin)
+Vue.use(debounce)
 //
 
 

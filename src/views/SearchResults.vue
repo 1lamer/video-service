@@ -17,7 +17,7 @@
 
 
 <script>
-import {mapActions, mapGetters, mapState} from 'vuex'
+import {mapState} from 'vuex'
 import item from '@/components/app-content/item'
 import messageOfAbsence from '@/components/UI/message-of-absence/message-of-absence'
 export default {
@@ -29,9 +29,5 @@ export default {
 	computed: {
 		...mapState(['searchResults']),
 	},
-	beforeDestroy() {
-		// Clear filtered state in order to display default content in onther pages
-		this.$store.state.filtered = []
-	}
 }
 </script>

@@ -6,8 +6,17 @@ export default {
 
 	async getSearchResults({commit}, search) {
 		try {
-			const responseMovie = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&query=${search}&page=1&include_adult=false`)
-			const responseTv = await axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${key}&language=en-US&query=${search}&page=1&include_adult=false`)
+			const responseMovie = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${key}
+				&language=en-US
+				&query=${search}
+				&page=1
+				&include_adult=false
+			`)
+			const responseTv = await axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${key}
+				&language=en-US
+				&query=${search}
+				&page=1&include_adult=false
+			`)
 			commit('searchResults', [...responseMovie.data.results, ...responseTv.data.results])
 		} catch(e) { console.log(e) }
 	},
@@ -24,7 +33,11 @@ export default {
 	async getMyList({commit}) {
 		try {
 			const myList = await firebase.database().ref('my-list/')
-			const responseMovie = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&query=a&page=1`)
+			const responseMovie = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${key}
+				&language=en-US
+				&query=a
+				&page=1
+			`)
 			const responseTv = await axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${key}&language=en-US&query=a&page=1`)
 			commit('myList', [...responseMovie.data.results, ...responseTv.data.results])
 		} catch(e) { console.log(e) }

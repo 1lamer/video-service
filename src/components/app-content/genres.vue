@@ -35,7 +35,8 @@ export default {
 
 	},
 	data: () => ({
-		selectedGenres: []
+		selectedGenres: [],
+		routeName: ''
 	}),
 	computed: {
 		...mapState(['genres']),
@@ -66,13 +67,15 @@ export default {
 		}
 	},
 	async created() {
+		this.routeName = this.$route.name
 		try {
 			await this.getGenres(this.$route.name)
 		} catch(e) { console.log(e) }
 		
 	},
 	beforeDestroy() {
-		this.dFiltered([[], this.$route.name])
+		this.dFiltered([[], this.routeName])
+		this.routeName = ''
 	}
 }
 </script>
