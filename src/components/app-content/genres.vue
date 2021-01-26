@@ -67,7 +67,7 @@ export default {
 	},
 	async created() {
 		try {
-			await this.getGenres()
+			await this.getGenres(this.$route.name)
 		} catch(e) { console.log(e) }
 		
 	},

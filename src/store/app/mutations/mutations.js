@@ -23,8 +23,9 @@ export default {
 		state.filtered = payload
 	},
 
-	search(state, search) {
-		state.search = search
+	searchResults(state, search) {
+		console.log(search)
+		state.searchResults = search
 	},
 
 	addToMyList(state, payload) {

@@ -38,18 +38,22 @@ export default {
 	computed: {
 	},
 	watch: {
-		search() {
+		async search() {
 			if (this.$route.name !== 'search') {
 				this.$router.push('/search')
 			}
-			this.dSearch(this.search)
+			try {
+				await this.getSearchResults(this.search)
+			} catch(e) { console.log(e) }
 		}
 	},
 	methods: {
-		...mapActions(['dSearch']),
+		...mapActions(['getSearchResults']),
 
-		find(search) {
-			this.dSearch(search)
+		async find(search) {
+			try {
+				await this.getSearchResults(search)
+			} catch(e) { console.log(e) }
 		},
 
 		focusInput() {
