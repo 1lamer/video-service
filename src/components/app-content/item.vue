@@ -2,15 +2,15 @@
 
 	<li class="list__item item">
 		<a class="item__link">
-			<img :src="require('@/assets/img/' + item.image)" alt="poster" class="item__poster">
+			<img :src="`https://image.tmdb.org/t/p/w500/${item.poster_path}`" alt="poster" class="item__poster">
 
 			<p class="item__description">
-					{{item.description}}
+					{{item.overview}}
 			</p>
 
-			<h3 class="item__name">{{item.name}}</h3>
+			<h3 class="item__name">{{item.title || item.name}}</h3>
 
-			<favorite :id="item.id" :isInMyList="item.isInMyList"/>
+			<favorite :id="item.id" />
 		</a>
 	</li>
 

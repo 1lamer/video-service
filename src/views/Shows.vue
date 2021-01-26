@@ -6,7 +6,11 @@
     <h2 class="shows__title title">All TV Shows</h2>
     
     <ul class="shows__list list">
-      <item v-for="(item, index) in filtered(this.$route.name, this.selectedGenres)" :key="index" :item="item" />
+      <item
+        v-for="(item, index) in filtered(this.$route.name, this.selectedGenres)"
+        :key="index"
+        :item="item"
+      />
     </ul>
 
     <messageOfAbsence v-show="!filtered(this.$route.name, this.selectedGenres).length">
