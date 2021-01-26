@@ -4,15 +4,68 @@ const key = process.env.VUE_APP_TMDB
 
 export default {
 
+	async getSearchResults({commit}, search) {
+		try {
+			const responseMovie = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&query=${search}&page=1&include_adult=false`)
+			const responseTv = await axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${key}&language=en-US&query=${search}&page=1&include_adult=false`)
+			commit('searchResults', [...responseMovie.data.results, ...responseTv.data.results])
+		} catch(e) { console.log(e) }
+	},
+
+
 	async getTrending({commit}) {
 		try {
 			const response = await axios.get(`https://api.themoviedb.org/3/trending/all/day?api_key=${key}`)
-			console.log(response)
 			commit('trending', response.data.results)
 		} catch(e) { console.log(e) }
 	},
 
-	// async getTrending({commit}) {
+
+	async getMyList({commit}) {
+		try {
+			const myList = await firebase.database().ref('my-list/')
+			const responseMovie = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&query=a&page=1`)
+			const responseTv = await axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${key}&language=en-US&query=a&page=1`)
+			commit('myList', [...responseMovie.data.results, ...responseTv.data.results])
+		} catch(e) { console.log(e) }
+	},
+
+	async getFilms({commit}) {
+		try {
+			const response = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${key}&language=en-US&page=1`)
+			commit('films', response.data.results)
+		} catch(e) { console.log(e) }
+	},
+
+
+	async getShows({commit}) {
+		try {
+			const response = await axios.get(`https://api.themoviedb.org/3/tv/popular?api_key=${key}&language=en-US&page=1`)
+			commit('shows', response.data.results)
+		} catch(e) { console.log(e) }
+	},
+
+
+	async getGenres({commit}, routeName) {
+		let type
+		try {
+
+			if (routeName === 'films') type = 'movie'
+			else if (routeName === 'shows') type = 'tv'
+
+			const response = await axios.get(`https://api.themoviedb.org/3/genre/${type}/list?api_key=${key}&language=en-US`)
+			commit('genres', response.data.genres)
+		} catch(e) { console.log(e) }
+	},
+}
+
+
+
+
+
+/////////////////////////////////
+// export default {
+
 	// 	try {
 	// 		const trending = await firebase.database().ref('trending/')
 
@@ -31,15 +84,6 @@ export default {
 	// 		commit('myList', data);
 	// 	})
 	// },
-	
-
-	async getFilms({commit}) {
-		try {
-			const response = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${key}&language=en-US&page=1`)
-			console.log(response)
-			commit('films', response.data.results)
-		} catch(e) { console.log(e) }
-	},
 
 	// getFilms({commit}) {
 	// 	const films = firebase.database().ref('films/')
@@ -50,14 +94,6 @@ export default {
 	// 	})
 	// },
 
-	async getShows({commit}) {
-		try {
-			const response = await axios.get(`https://api.themoviedb.org/3/tv/popular?api_key=${key}&language=en-US&page=1`)
-			console.log(response)
-			commit('shows', response.data.results)
-		} catch(e) { console.log(e) }
-	},
-
 	// getShows({commit}) {
 	// 	const shows = firebase.database().ref('shows/')
 
@@ -67,13 +103,6 @@ export default {
 	// 	})
 	// },
 
-	async getGenres({commit}) {
-		try {
-			const response = await axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${key}&language=en-US`)
-			commit('genres', response.data.genres)
-		} catch(e) { console.log(e) }
-	},
-
 	// getGenres({commit}) {
 	// 	const genres = firebase.database().ref('genres/')
 
@@ -82,8 +111,7 @@ export default {
 	// 		commit('genres', data);
 	// 	})
 	// },
-}
-
+// }
 
 // export default {
 	// getTrending({commit}) {

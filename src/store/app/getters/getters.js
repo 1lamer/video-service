@@ -7,9 +7,9 @@ export default {
 		return state.filtered
 	},
 
-	searchResults: (state) => (search) => {
-		let content = [...state.shows, ...state.films]
+	// searchResults: (state) => (search) => {
+	// 	let content = [...state.shows, ...state.films]
 
-		return content.filter(item => `${item.name || item.title}`.toLowerCase().includes(search.toLowerCase()))
-	}
+	// 	return content.filter(item => `${item.name || item.title}`.toLowerCase().includes(search.toLowerCase()))
+	// }
 }

@@ -26,15 +26,12 @@ export default {
 		...mapState(['trending'])
 	},
 	methods: {
-		...mapActions(['getTrending', 'getShows', 'getFilms'])
+		...mapActions(['getTrending'])
 	},
 	async created() {
 		try {
 			await this.getTrending()
-			await this.getFilms()
-			await this.getShows()
 		} catch(e) { console.log(e) }
-		
 	}
 }
 </script>

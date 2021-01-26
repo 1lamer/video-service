@@ -2,7 +2,14 @@
 
 	<li class="list__item item">
 		<a class="item__link">
-			<img :src="`https://image.tmdb.org/t/p/w500/${item.poster_path}`" alt="poster" class="item__poster">
+			<img
+				:src="item.poster_path
+					? `https://image.tmdb.org/t/p/w500/${item.poster_path}`
+					: require('@/assets/img/no-img.jpg')
+					"
+				alt="poster"
+				class="item__poster"
+			>
 
 			<p class="item__description">
 					{{item.overview}}

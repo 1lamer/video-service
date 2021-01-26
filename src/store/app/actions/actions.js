@@ -23,9 +23,9 @@ export default {
 		commit('filtered', filteredContent)
 	},
 
-	dSearch({commit}, search) {
+	/*dSearch({commit}, search) {
 		commit('search', search)
-	},
+	},*/
 
 	addToMyList({commit, state}, payload) {
 		let [id, isInMyList] = payload

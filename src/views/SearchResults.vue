@@ -5,10 +5,10 @@
 		<h2 class="search-results__title title">Search results</h2>
 
 		<ul class="search-results__list list">
-			<item v-for="(item, index) in searchResults(search)" :key="index" :item="item"/>
+			<item v-for="(item, index) in searchResults" :key="index" :item="item"/>
 		</ul>
 
-		<messageOfAbsence v-show="!searchResults(search).length">
+		<messageOfAbsence v-show="!searchResults.length">
 			It was nothing found ¯\_(ツ)_/¯
 		</messageOfAbsence>
 	</section>
@@ -27,15 +27,7 @@ export default {
 		messageOfAbsence
 	},
 	computed: {
-		...mapGetters(['searchResults']),
-		...mapState(['search']),
-	},
-	methods: {
-		...mapActions(['getShows', 'getFilms'])
-	},
-	created() {
-		this.getShows()
-		this.getFilms()
+		...mapState(['searchResults']),
 	},
 	beforeDestroy() {
 		// Clear filtered state in order to display default content in onther pages
