@@ -33,13 +33,8 @@ export default {
 	async getMyList({commit}) {
 		try {
 			const myList = await firebase.database().ref('my-list/')
-			const responseMovie = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${key}
-				&language=en-US
-				&query=a
-				&page=1
-			`)
-			const responseTv = await axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${key}&language=en-US&query=a&page=1`)
-			commit('myList', [...responseMovie.data.results, ...responseTv.data.results])
+			console.log(myList)
+			commit('myList', myList)
 		} catch(e) { console.log(e) }
 	},
 

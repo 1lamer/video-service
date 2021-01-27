@@ -29,6 +29,7 @@ export default {
 
 	addToMyList({commit, state}, payload) {
 		let [id, isInMyList] = payload
+		console.log(id)
 
 		let content = [...state.shows, ...state.films]
 

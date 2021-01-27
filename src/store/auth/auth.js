@@ -4,6 +4,7 @@ import actions from '@/store/auth/actions/actions'
 
 export default {
 	state: {
+		user: '',
 		errorCode: '',
 		errorMessages: {
 			'auth/user-not-found': 'Wrong email',

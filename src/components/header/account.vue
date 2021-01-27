@@ -4,7 +4,7 @@
 			type="button"
 			class="header__button header__button--notAuthorized button button--rect"
 			@click="signIn = true"
-			v-if="!authorized"
+			v-show="!isAuthotized"
 		>
 			<span>Sign in</span>
 		</button>
@@ -16,7 +16,7 @@
 			@mouseover="isDropDown = true"
 			@mouseleave="isDropDown = false"
 			@click="isDropDown = false"
-			v-else
+			v-show="isAuthotized"
 		>
 			<svg class="header__icon" width="20" height="20" >
 				<use xlink:href="@/assets/img/sprite.svg#user"></use>
@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import {mapMutations, mapActions} from 'vuex'
+import {mapMutations, mapActions, mapState} from 'vuex'
 import signIn from '@/components/UI/modal/sign-in'
 import signUp from '@/components/UI/modal/sign-up'
 import dropDown from '@/components/UI/drop-down/drop-down'
@@ -63,9 +63,16 @@ export default {
 		},
 		authorized: false
 	}),
+	computed: {
+		...mapState(['auth']),
+
+		isAuthotized() {
+			return this.auth.user !== ''
+		}
+	},
 	methods: {
 		...mapMutations(['setMessage', 'changeIsShow']),
-		...mapActions(['signOut']),
+		...mapActions(['signOut', 'getUid']),
 
 		async action(data) {
 			this.isDropDown = false
@@ -81,6 +88,6 @@ export default {
 				catch(e) { console.log(e) }
 			}
 		},
-	}
+	},
 }
 </script>

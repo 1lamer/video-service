@@ -1,6 +1,7 @@
 import firebase from "firebase/app"
 
 export default {
+
 	async signUp({dispatch, commit}, {email, password, name}) {
 		try {
 			const user = await firebase.auth().createUserWithEmailAndPassword(email, password)
@@ -22,22 +23,22 @@ export default {
 		try {
 			const user = await firebase.auth().signInWithEmailAndPassword(email, password)
 			const uid = await dispatch('getUid')
-			console.log(user, uid)
+			commit('user', uid)
 		} catch(e) {
 			// Setting an error to state.errorCode
 			commit('setErrorCode', e.code)
 		}
 	},
 
-	async getUid() {
+	async getUid({commit}) {
 		const user = firebase.auth().currentUser
-		return user ? user.uid : null
+		return user ? user.uid : ''
 	},
 
-	async signOut() {
+	async signOut({commit}) {
 		try {
 			await firebase.auth().signOut()
-			console.log('logged out')
+			commit('user', '')
 		} catch(e) { console.log(e) }
 	},
 }

@@ -16,7 +16,6 @@ Vue.use(debounce)
 
 // Backend
 import firebase from "firebase/app"
-// import firebaseConfig from './firebase-init'
 import firebaseInit from './firebase-init'
 import "firebase/auth"
 import "firebase/database"
@@ -33,7 +32,7 @@ new Vue({
   store,
   render: h => h(App),
   created() {
-		firebase.initializeApp(firebaseInit.firebaseConfig)
-		// firebaseInit.authState()
-  }
+  	firebase.initializeApp(firebaseInit.firebaseConfig)
+  	firebaseInit.authState.call(this)
+  },
 }).$mount('#app')

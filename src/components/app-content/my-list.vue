@@ -40,9 +40,5 @@ export default {
 	created() {
 		this.getMyList()
 	},
-	beforeDestroy() {
-		// Clear filtered state in order to display default content in onther pages
-		// this.$store.state.filtered = []
-	}
 }
 </script>

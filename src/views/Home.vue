@@ -3,7 +3,7 @@
 
 		<trending :trending="trending"/>
 
-		<myList />
+		<myList v-if="isAuthotized"/>
 		
 	</section>
 </template>
@@ -20,10 +20,14 @@ export default {
 		myList
 	},
 	data: () => ({
-
+		user: ''
 	}),
 	computed: {
-		...mapState(['trending'])
+		...mapState(['trending', 'auth']),
+
+		isAuthotized() {
+			return this.auth.user !== ''
+		}
 	},
 	methods: {
 		...mapActions(['getTrending'])

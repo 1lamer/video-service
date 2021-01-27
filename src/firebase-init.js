@@ -14,10 +14,9 @@ const firebaseInit = {
 		try {
 			await firebase.auth().onAuthStateChanged((user) => {
 				if (user) {
-					console.log('user with id: ' + user.uid + ' signed in')
-				}
-				else {
-					console.log('user logged out')
+					this.$store.commit('user', user.uid)
+				} else {
+					this.$store.commit('user', '')
 				}
 			})
 		} catch (e) {
