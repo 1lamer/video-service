@@ -7,7 +7,7 @@
 			<item v-for="(item, index) in myList" :key="index" :item="item" />
 		</ul>
 
-		<messageOfAbsence v-show="!myList.length">
+		<messageOfAbsence v-show="!Object.keys(myList).length">
 			It was nothing added to list (；ω；)
 		</messageOfAbsence>
 		

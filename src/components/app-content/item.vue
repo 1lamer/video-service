@@ -17,7 +17,7 @@
 
 			<h3 class="item__name">{{item.title || item.name}}</h3>
 
-			<favorite :id="item.id" />
+			<favorite :content="item" />
 		</a>
 	</li>
 

@@ -28,14 +28,45 @@ export default {
 			commit('trending', response.data.results)
 		} catch(e) { console.log(e) }
 	},
+ 
 
-
-	async getMyList({commit}) {
+	async getMyList({commit, dispatch, state}) {
 		try {
-			const myList = await firebase.database().ref('my-list/')
-			console.log(myList)
-			commit('myList', myList)
+			const id = await dispatch('getUid')
+			if (id) {
+				await firebase
+					.database()
+					.ref(`users/${id}/my-list`)
+					.orderByChild('timestamp')
+					.on('value', (snapshot) => {
+						const data = snapshot.val() || {}
+						commit('myList', data)
+					})
+			}
 		} catch(e) { console.log(e) }
+	},
+
+
+	async changeMyList({dispatch, state, commit}, content) {
+		const id = await dispatch('getUid')
+		const isThereContent = Object.prototype.hasOwnProperty.call(state.myList, content.id)
+
+		if (!isThereContent && id) {
+			try {
+				firebase.database()
+								.ref(`users/${id}/my-list`)
+								.child(content.id)
+								.set(content)
+			} catch(e) { console.log(e) }
+			
+		} else if (isThereContent && id) {
+			try {
+				firebase.database()
+								.ref(`users/${id}/my-list`)
+								.child(content.id)
+								.remove()
+			} catch(e) { console.log(e) }
+		}
 	},
 
 	async getFilms({commit}) {

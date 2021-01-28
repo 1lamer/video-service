@@ -1,11 +1,11 @@
 <template>
-	<button class="favorite" @click="addToMyList([id, !isInMyList])">
+	<button class="favorite" @click="changeMyList(content)">
 		<svg
 			class="icon"
 			width="22"
 			height="22"
 			fill="#ffffff"
-			:class="{favorite_active: isInMyList}"
+			:class="{favorite_active: isActive}"
 		>
 			<use xlink:href="@/assets/img/sprite.svg#heart"></use>
 		</svg>
@@ -20,19 +20,16 @@ export default {
 	components: {
 	},
 	props: {
-		id: {
-			type: Number,
+		content: {
+			type: Object,
+			default: () => {}
 		},
-		isInMyList: {
-			type: Boolean,
-			default: () => false
-		}
 	},
 	data: () => ({
-		isActive: false
+		isActive: true
 	}),
 	methods: {
-		...mapActions(['addToMyList']),
+		...mapActions(['changeMyList']),
 	},
 	created() {
 	}
@@ -60,8 +57,12 @@ export default {
 
 		transition: all .2s;
 
-		&:hover {
+		&:hover, &:focus {
 			transform: scale(1.1)
+		}
+
+		&:active {
+			transform: scale(0.5)
 		}
 
 		.favorite_active {
