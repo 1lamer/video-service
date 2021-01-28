@@ -4,6 +4,7 @@
 			<li class="drop-down__item">
 				<button
 					class="drop-down__btn"
+					tabindex="0"
 					@click="$emit('click')"
 				>
 					Profile
@@ -12,6 +13,7 @@
 			<li class="drop-down__item">
 				<button
 					class="drop-down__btn"
+					tabindex="0"
 					@click="$emit('click', 'signout')"
 				>
 					Sign out
@@ -57,18 +59,18 @@
 				display: none;
 			}
 
-			li:hover > ul,
-			ul li:focus-within > ul,
-			li ul:hover {
-				visibility: visible;
-				opacity: 1;
-				display: block;
-			}
+			// li:hover > ul,
+			// ul li:focus-within > ul,
+			// li ul:hover {
+			// 	visibility: visible;
+			// 	opacity: 1;
+			// 	display: block;
+			// }
 
-			li ul li {
-				clear: both;
-				width: 100%;
-			}
+			// li ul li {
+			// 	clear: both;
+			// 	width: 100%;
+			// }
 		}
 
 		&__item {
@@ -88,11 +90,11 @@
 					color: #fff;
 				}
 
-				.drop-down__list {
-					visibility: visible;
-					opacity: 1;
-					display: block;
-				}
+				// .drop-down__list {
+				// 	visibility: visible;
+				// 	opacity: 1;
+				// 	display: block;
+				// }
 			}
 		}
 

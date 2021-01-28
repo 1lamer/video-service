@@ -15,7 +15,6 @@
 			@focus="isDropDown = true"
 			@mouseover="isDropDown = true"
 			@mouseleave="isDropDown = false"
-			@click="isDropDown = false"
 			v-show="isAuthotized"
 		>
 			<svg class="header__icon" width="20" height="20" >

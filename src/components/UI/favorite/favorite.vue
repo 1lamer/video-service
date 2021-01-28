@@ -62,7 +62,7 @@ export default {
 		}
 
 		&:active {
-			transform: scale(0.5)
+			transform: scale(0.9)
 		}
 
 		.favorite_active {

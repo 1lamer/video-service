@@ -8,7 +8,7 @@
 		</ul>
 
 		<messageOfAbsence v-show="!Object.keys(myList).length">
-			It was nothing added to list (；ω；)
+			It was nothing added to list <br> (；ω；)
 		</messageOfAbsence>
 		
 	</section>

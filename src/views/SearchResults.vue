@@ -9,7 +9,7 @@
 		</ul>
 
 		<messageOfAbsence v-show="!searchResults.length">
-			It was nothing found ¯\_(ツ)_/¯
+			It was nothing found <br> ¯\_(ツ)_/¯
 		</messageOfAbsence>
 	</section>
 

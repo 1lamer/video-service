@@ -25,5 +25,6 @@ export default {
 		height: 70vh;
 
 		font-size: 30px;
+		text-align: center;
 	}
 </style>
