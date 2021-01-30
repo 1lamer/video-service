@@ -22,11 +22,11 @@
 
 <style lang="scss">
 	.list-transition-enter-active, .list-transition-leave-active, .list-transition-move {
-	  transition: all .2s;
+		transition: all .2s;
 	}
 	.list-transition-enter, .list-transition-leave-to {
-	  opacity: 0;
-	  transform: translateY(100px);
+		opacity: 0;
+		transform: translateY(100px);
 	}
 </style>
 

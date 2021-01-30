@@ -22,7 +22,6 @@
 			<Footer />
 
 			<snackbar
-				slot="snackbar"
 				:isShow="isShow" 
 				@isShow="changeIsShow($event)"
 			>

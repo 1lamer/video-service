@@ -22,7 +22,7 @@ export default {
 	watch: {
 		isShow() {
 			setTimeout(() => {
-				this.$emit('isShow')
+				this.$emit('isShow', false)
 			}, 2000) 
 		}
 	}
