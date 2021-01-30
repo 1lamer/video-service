@@ -1,5 +1,6 @@
 import axios from 'axios'
 import firebase from "firebase/app"
+import store from '@/store/app'
 const key = process.env.VUE_APP_TMDB
 
 export default {
@@ -50,9 +51,14 @@ export default {
 	async changeMyList({dispatch, state, commit}, content) {
 		const id = await dispatch('getUid')
 		const isThereContent = Object.prototype.hasOwnProperty.call(state.myList, content.id)
+		const contentName = content.name || content.title
 
 		if (!isThereContent && id) {
 			try {
+				// Expose message via snackbar about successuf adding
+				store.commit('setMessage', `${contentName}: added to your list`)
+				store.commit('changeIsShow', true)
+
 				firebase.database()
 								.ref(`users/${id}/my-list`)
 								.child(content.id)
@@ -61,6 +67,10 @@ export default {
 			
 		} else if (isThereContent && id) {
 			try {
+				// Expose message via snackbar about successuf removing
+				store.commit('setMessage', `${contentName}: removed from your list`)
+				store.commit('changeIsShow', true)
+
 				firebase.database()
 								.ref(`users/${id}/my-list`)
 								.child(content.id)
