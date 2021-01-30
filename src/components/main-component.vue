@@ -21,12 +21,14 @@
 
 			<Footer />
 
-			<snackbar
-				:isShow="isShow" 
-				@isShow="changeIsShow($event)"
+			<v-snackbar
+				v-model="snackbar"
+				:timeout="2000"
+				:content-class="'text-center'" 
+				:color="'rgba(51,51,51,0.9)'"
 			>
-        {{message}}
-      </snackbar>
+				{{message}}
+			</v-snackbar>
 			
 		</div>
 		<!-- /container -->
@@ -40,7 +42,6 @@
 	import Header from '@/components/header/header'
 	import Nav from '@/components/nav/nav'
 	import Footer from '@/components/footer/footer'
-	import snackbar from '@/components/UI/snackbar/snackbar'
 	import fouteFade from '@/components/animations/route-fade'
 
 	export default {
@@ -49,16 +50,29 @@
 			Header,
 			Footer,
 			Nav,
-			snackbar,
 			fouteFade
 		},
 		data: () => ({
+			snackbar: false
 		}),
 		computed: {
 			...mapGetters(['message', 'isShow']),
+			isActive() {
+				return this.isShow
+			}
+		},
+		watch: {
+			// When v-snackbar returns snackbar=false, we will set isShow as false
+			snackbar() {
+				this.changeIsShow(this.snackbar)
+			},
+			isActive() {
+				console.log(this.isShow)
+				this.snackbar = this.isShow
+			}
 		},
 		methods: {
 			...mapMutations(['changeIsShow'])
-		}
+		},
 	}
 </script>
