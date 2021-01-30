@@ -9,7 +9,11 @@
 				<Nav />
 
 				<div id="app-content">
-					<router-view/>
+					
+					<fouteFade>
+						<router-view/>
+					</fouteFade>
+					
 				</div>
 				<!-- /app-content -->
 			</div>
@@ -37,7 +41,8 @@
 	import Header from '@/components/header/header'
 	import Nav from '@/components/nav/nav'
 	import Footer from '@/components/footer/footer'
-	import snackbar from '@/components/UI/snackbar/snackbar.vue'
+	import snackbar from '@/components/UI/snackbar/snackbar'
+	import fouteFade from '@/components/animations/route-fade'
 
 	export default {
 		name: 'App',
@@ -45,7 +50,8 @@
 			Header,
 			Footer,
 			Nav,
-			snackbar
+			snackbar,
+			fouteFade
 		},
 		data: () => ({
 		}),

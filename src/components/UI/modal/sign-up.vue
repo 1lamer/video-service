@@ -60,6 +60,7 @@
 
 					<input class="form__input"
 						v-model.trim="password"
+						type="password" 
 						:class="{ error: $v.password.$error }"
 						@change="$v.password.$touch()"
 					>
@@ -76,6 +77,7 @@
 
 					<input class="form__input"
 						v-model.trim="repeatPassword"
+						type="password" 
 						:class="{ error: $v.repeatPassword.$error }"
 						@change="$v.repeatPassword.$touch()"
 					>

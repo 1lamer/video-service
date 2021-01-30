@@ -5,13 +5,15 @@
 
 		<h2 class="films__title title">All movies</h2>
 		
-		<ul class="films__list list">
-			<item
-				v-for="(item, index) in filtered(this.$route.name, this.selectedGenres)"
-				:key="index"
-				:item="item"
-			/>
-		</ul>
+		<!-- <ul class="films__list list"> -->
+			<listTransition :tag="'ul'" :class="['films__list', 'list']">
+				<item
+					v-for="(item, index) in filtered(this.$route.name, this.selectedGenres)"
+					:key="index"
+					:item="item"
+				/>
+			</listTransition>
+		<!-- </ul> -->
 
 		<messageOfAbsence v-show="!filtered(this.$route.name, this.selectedGenres).length">
 			It was nothing found ¯\_(ツ)_/¯
@@ -25,13 +27,15 @@ import {mapActions, mapGetters} from 'vuex'
 import item from '@/components/app-content/item'
 import genres from '@/components/app-content/genres'
 import messageOfAbsence from '@/components/UI/message-of-absence/message-of-absence'
+import listTransition from '@/components/animations/list-transition'
 
 export default {
 	name: 'Films',
 	components: {
 		item,
 		genres,
-		messageOfAbsence
+		messageOfAbsence,
+		listTransition
 	},
 	data: () => ({
 		selectedGenres: []
@@ -53,3 +57,4 @@ export default {
 	}
 }
 </script>
+
