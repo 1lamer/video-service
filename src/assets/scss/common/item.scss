@@ -1,7 +1,9 @@
 .item {
 	// width: 280px;
 	width: 200px;
-	
+
+	transition: all .2s;
+
 	&__link {
 		position: relative;
 
@@ -47,6 +49,14 @@
 		margin-bottom: 15px;
 
 		border-radius: 8px;
+		box-shadow: 5px 20px 30px rgba(0,0,0,0.3);
+
+		transition: all 0.2s ease-in-out;
+
+		&:hover {
+			transform: translateY(-6px);
+	    box-shadow: 5px 20px 30px rgba(0,0,0,0.2);
+	  }
 	}
 
 	&__name { 

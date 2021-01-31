@@ -2,8 +2,10 @@ export default {
 
 	filtered: (state) => (routeName, selectedGenres) => {
 
-		if (!state.filtered.length && !selectedGenres.length) state.filtered = state.[routeName]
-
+		if (!state.filtered.length && !selectedGenres.length) {
+			
+			state.filtered = state.[routeName]
+		}
 		return state.filtered
 	},
 

@@ -8,8 +8,8 @@
 		<!-- <ul class="films__list list"> -->
 			<listTransition :tag="'ul'" :class="['films__list', 'list']">
 				<item
-					v-for="(item, index) in filtered(this.$route.name, this.selectedGenres)"
-					:key="index"
+					v-for="item in filtered(this.$route.name, this.selectedGenres)"
+					:key="item.id"
 					:item="item"
 				/>
 			</listTransition>

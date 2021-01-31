@@ -8,8 +8,8 @@
     <!-- <ul class="shows__list list"> -->
       <listTransition :tag="'ul'" :class="['shows__list', 'list']">
         <item
-          v-for="(item, index) in filtered(this.$route.name, this.selectedGenres)"
-          :key="index"
+          v-for="item in filtered(this.$route.name, this.selectedGenres)"
+          :key="item.id"
           :item="item"
         />
       </listTransition>
@@ -47,8 +47,10 @@ export default {
   methods: {
     ...mapActions(['getShows']),
   },
-  created() {
-    this.getShows()
+  async created() {
+    try {
+      await this.getShows()
+    } catch(e) { console.log(e) } 
   },
   beforeDestroy() {
     // Clear filtered state in order to display default content in onther pages

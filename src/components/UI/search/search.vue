@@ -73,6 +73,7 @@ export default {
 	height: 30px;
 
 	border-radius: 50%;
+	overflow: hidden;
 	background-color: $primary-color;
 
 	outline: none;
@@ -83,6 +84,7 @@ export default {
 		width: 200px;
 
 		border-radius: 0;
+		background-color: #fff;
 
 		.search__input { 
 			padding-right: 40px;

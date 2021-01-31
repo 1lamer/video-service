@@ -11,9 +11,9 @@
 				class="item__poster"
 			>
 
-			<p class="item__description">
+			<!-- <p class="item__description">
 					{{item.overview}}
-			</p>
+			</p> -->
 
 			<h3 class="item__name">{{item.title || item.name}}</h3>
 

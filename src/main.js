@@ -7,6 +7,7 @@ import store from '@/store/app'
 import Vuelidate from 'vuelidate'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
+
 import messagePlugin from '@/utils/message-plugin'
 import debounce from '@/utils/debounce'
 

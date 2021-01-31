@@ -4,23 +4,31 @@ export default {
 		let filteredContent = []
 		let filteredIds = []
 		let [genresIds, routeName] = payload
-		
-		filteredContent = [
-			// Filter an array of preceding filtered content to check are they suited to new genres
-			...filteredContent.filter(content => checkIds(content.genre_ids, genresIds)),
 
-			...state.[routeName].filter(content => {
-				/*
-					Checking is there the same item (film or show) in filtered list
-				*/
-				if (checkIds(content.genre_ids, genresIds) && !filteredIds.includes(content.id)) {
-					filteredIds.push(content.id)
-					return true
-				}
-			})
-		]
-		
-		commit('filtered', filteredContent)
+		/*
+			When beforedestroy hook called 
+			we need to avoid of committng precede 'filteredContent'. 
+			Thus we need to check for the length of genresIds
+		*/ 
+		if (genresIds.length) {
+
+			filteredContent = [
+				// Filter an array of preceding filtered content to check are they suited to new genres
+				...filteredContent.filter(content => checkIds(content.genre_ids, genresIds)),
+
+				...state.[routeName].filter(content => {
+					/*
+						Checking is there the same item (film or show) in filtered list
+					*/
+					if (checkIds(content.genre_ids, genresIds) && !filteredIds.includes(content.id)) {
+						filteredIds.push(content.id)
+						return true
+					}
+				})
+			]
+
+			commit('filtered', filteredContent)
+		}
 	},
 
 	/*dSearch({commit}, search) {
