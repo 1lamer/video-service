@@ -1,11 +1,15 @@
 <template>
 	<div class="video-content" @click="enabled = true">
 		<div class="video-content__cover" v-if="!enabled">
-			<img
-				class="video-content__media"
-				:src="`https://i.ytimg.com/vi/${id}/maxresdefault.jpg`"
-				alt="Cover of trailer"
-			>
+			<picture>
+				<source :srcset="`https://i.ytimg.com/vi_webp/${id}/maxresdefault.webp`" type="image/webp"> 
+				<img
+					class="video-content__media"
+					:src="`https://i.ytimg.com/vi/${id}/maxresdefault.jpg`"
+					alt="Cover of trailer"
+				>
+			</picture>
+			
 			<button class="video-content__button" aria-label="Play video">
 				<svg class="video-content__logo" width="60" height="60" fill="#ffffff">
 					<use xlink:href="@/assets/img/sprite.svg#logo"></use>

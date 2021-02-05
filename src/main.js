@@ -6,13 +6,17 @@ import store from '@/store/app'
 // Plugins
 import Vuelidate from 'vuelidate'
 import Vuetify from 'vuetify'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+
 import 'vuetify/dist/vuetify.min.css'
+import 'swiper/css/swiper.css'
 
 import messagePlugin from '@/utils/message-plugin'
 import debounce from '@/utils/debounce'
 
 Vue.use(Vuelidate)
 Vue.use(Vuetify)
+Vue.use(VueAwesomeSwiper)
 Vue.use(messagePlugin)
 Vue.use(debounce)
 //

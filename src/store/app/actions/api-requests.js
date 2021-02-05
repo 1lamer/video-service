@@ -13,7 +13,9 @@ export default {
 				&page=1
 				&include_adult=false
 			`)
+			console.log(responseMovie)
 			const dataMovie = responseMovie.data.results
+
 			dataMovie.forEach(d => d.media_type = 'movie')
 
 			const responseTv = await axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${key}
@@ -127,7 +129,10 @@ export default {
 																				&language=en-US
 																				&append_to_response=videos,images,credits
 																			`)
-			commit('contentInfo', response.data)
+			const data = response.data
+			data.media_type = type
+
+			commit('contentInfo', data)
 		} catch(e) {
 			console.log(e)
 		}

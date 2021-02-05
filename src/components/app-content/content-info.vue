@@ -16,35 +16,106 @@
 
 							<videoContent class="content-info__video-content" :id="videoId(content.videos.results)"/>
 
-							<!-- <h4 class="content-info__title">Cast:</h4>
+								<p class="content-info__tagline">
+									<em>
+										{{content.tagline}}
+									</em>
 
-							<ul class="content-info__credits-list">
-								<li
-									v-for="person in content.credits.cast"
-									:key="person.id"
-									class="content-info__credits-item"
-								>
-									{{person.name}}
-								</li>
-							</ul> -->
+									<favorite :content="content" @click="console.log(content.media_type)"/>
+								</p>
+
+								
+
 						</div>
 						<!-- /content-info__col -->
 
 						<div class="content-info__col">
 							<h4 class="content-info__title">Plot:</h4>
 
-							<p class="content-info__overview">
+							<p class="content-info__info">
 								{{content.overview}}
 							</p>
 
-							<span class="content-info__rating">
+							<p class="content-info__info">
+								Genre:
+								<span
+									v-for="genre in content.genres"
+									:key="genre.id"
+								>
+									&bull; {{genre.name}}
+								</span>
+							</p>
+
+							<p class="content-info__info">
+								Country:
+								<span
+									v-for="country in content.production_countries"
+									:key="country.iso_3166_1"
+								>
+									{{country.iso_3166_1}}
+								</span>
+							</p>
+
+							<p class="content-info__info">
+								Language:
+								<span
+									v-for="lang in content.spoken_languages"
+									:key="lang.iso_639_1"
+								>
+									{{lang.iso_639_1}}
+								</span>
+							</p>
+
+							<p class="content-info__info">
+								Year:
+								{{
+									content.release_date
+									? content.release_date.slice(0,4)
+									: content.first_air_date.slice(0,4)
+								}}
+							</p>
+
+							<p class="content-info__info">
 								TMDB: {{content.vote_average}}
-							</span>
+							</p>
+
+							<a class="content-info__site" :href="content.homepage" target="_blank">Watch now</a>
+
 						</div>
 						<!-- /content-info__col -->
 					</div>
 					<!-- /content-info__row -->
 
+					<h4 class="content-info__title">Cast:</h4>
+
+					<!-- Swiper connection -->
+					<div v-swiper:creditsSwiper="swiperOption" class="swiper-container content-info__credits credits">
+						<ul class="credits__list swiper-wrapper">
+							<li
+								v-for="person in content.credits.cast"
+								:key="person.id"
+								class="credits__item swiper-slide"
+							>
+								<img
+									class="credits__image"
+									:src="person.profile_path
+										? `https://image.tmdb.org/t/p/w500/${person.profile_path}`
+										: require('@/assets/img/user.jpg')
+									"
+									:alt="person.name"
+								>
+
+								<span class="credits__name">{{person.name}}</span>
+							</li>
+						</ul>
+
+						<div class="swiper-pagination"></div>
+
+						<div class="swiper-button-prev" slot="button-prev"></div>
+				    <div class="swiper-button-next" slot="button-next"></div>
+					</div>
+					<!-- /swiper -->
+				
 				</div>
 				<!-- /content-info__container -->
 			</div>
@@ -58,11 +129,14 @@
 	import {mapMutations} from 'vuex'
 	import modalFade from '@/components/animations/modal-fade'
 	import videoContent from '@/components/UI/video-content/video-content'
+	import favorite from '@/components/UI/favorite/favorite'
+
 	export default {
 		name: 'content-info',
 		components: {
 			modalFade,
-			videoContent
+			videoContent,
+			favorite
 		},
 		props: {
 			content: {
@@ -71,6 +145,15 @@
 			}
 		},
 		data: () => ({
+      swiperOption: {
+        slidesPerView: 7,
+        spaceBetween: 30,
+        slidesPerGroup: 3,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
+      },
 			wrapper: (path) => ({
 				'backgroundImage': `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://image.tmdb.org/t/p/original/${path})`,
 				'backgroundRepeat': 'no-repeat',
@@ -86,7 +169,8 @@
 			}
 		},
 		mounted() {
-			console.log(this.content)
+			this.creditsSwiper.slideTo(0, 1500, true)
+
 			document.body.addEventListener('keyup', e => {
 				if (e.keyCode === 27) this.contentInfo({})
 			})
@@ -103,15 +187,26 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+
+	.swiper-button-next,
+	.swiper-button-prev {
+		color: #fff !important;
+
+		&:hover, &:focus {
+			color: #000 !important;
+		}
+	}
+
+	.favorite { position: static; }
 
 	.content-info {
 		position: fixed;
-		top: 4%;
+		top: 5%;
 		left: 0;
 
 		width: 100%;
-		height: 100%;
+		height: 100vh;
 
 		background-color: rgba(0,0,0,0.8);
 
@@ -123,13 +218,13 @@
 		&__wrapper {
 			position: absolute;
 			z-index: 900;
-			top: 50%;
+			top: 0;
 			left: 50%;
 
 			width: 80%;
 			padding: 50px 20px;
 
-			transform: translate(-50%, -50%);
+			transform: translateX(-50%);
 		}
 
 		&__container {
@@ -150,15 +245,14 @@
 		}
 
 		&__row {
+			position: relative;
+
 			display: flex;
 			justify-content: space-between;
 		}
 
 		&__col {
-			// flex-grow: 0;
-			width: 48%;
-			display: flex;
-			flex-direction: column;
+			min-width: 0;
 		}
 
 		&__col:nth-child(1) {
@@ -168,14 +262,77 @@
 		&__col:nth-child(2) {
 			width: 40%;
 		}
-		
-		// &__video-content {
-		// 	width: 600px;
-		// 	height: 300px;
-		// }
 
-		&__overview {
-			margin-bottom: 10px;
+		&__video-content { margin-bottom: 20px; }
+
+		&__tagline {
+			position: relative;
+
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			margin-bottom: 20px;
+		}
+
+		&__credits {
+
+		}
+
+		&__info {
+			display: block;
+
+			margin-bottom: 20px;
+		}
+
+		&__site {
+			position: relative;
+
+			padding-right: 5%;
+
+			color: #fff;
+
+			&::after {
+				content: '\27A4';
+
+				position: absolute;
+				top: 0;
+				right: 0;
+
+				transition: right .2s; 
+			}
+
+			&:hover, &:focus {
+				&::after {
+					right: -5%;
+				}
+			}
+		}
+
+		.credits {
+
+			&__list {
+
+			}
+
+			&__item {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			&__image {
+				min-width: 100px;
+				width: 100px;
+				height: 120px;
+
+				border-radius: 50%;
+			}
+
+			&__name {
+				font-size: 14px;
+			}
+
 		}
 }
 
