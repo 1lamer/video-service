@@ -10,10 +10,14 @@ export default {
 			we need to avoid of committng precede 'filteredContent'. 
 			Thus we need to check for the length of genresIds
 		*/ 
+
 		if (genresIds.length) {
 
 			filteredContent = [
-				// Filter an array of preceding filtered content to check are they suited to new genres
+				/*
+					Filter an array of preceding filtered 
+					content to check are they suited to new genres
+				*/
 				...filteredContent.filter(content => checkIds(content.genre_ids, genresIds)),
 
 				...state.[routeName].filter(content => {
@@ -26,9 +30,8 @@ export default {
 					}
 				})
 			]
-
-			commit('filtered', filteredContent)
 		}
+		commit('filtered', filteredContent)
 	},
 
 	/*dSearch({commit}, search) {
