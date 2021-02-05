@@ -13,12 +13,18 @@ export default {
 				&page=1
 				&include_adult=false
 			`)
+			const dataMovie = responseMovie.data.results
+			dataMovie.forEach(d => d.media_type = 'movie')
+
 			const responseTv = await axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${key}
 				&language=en-US
 				&query=${search}
 				&page=1&include_adult=false
 			`)
-			commit('searchResults', [...responseMovie.data.results, ...responseTv.data.results])
+			const dataTv = responseTv.data.results
+			dataTv.forEach(d => d.media_type = 'tv')
+
+			commit('searchResults', [...dataMovie, ...dataTv])
 		} catch(e) { console.log(e) }
 	},
 
@@ -82,7 +88,10 @@ export default {
 	async getFilms({commit}) {
 		try {
 			const response = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${key}&language=en-US&page=1`)
-			commit('films', response.data.results)
+			const data = response.data.results
+			data.forEach(d => d.media_type = 'movie')
+
+			commit('films', data)
 		} catch(e) { console.log(e) }
 	},
 
@@ -90,7 +99,10 @@ export default {
 	async getShows({commit}) {
 		try {
 			const response = await axios.get(`https://api.themoviedb.org/3/tv/popular?api_key=${key}&language=en-US&page=1`)
-			commit('shows', response.data.results)
+			const data = response.data.results
+			data.forEach(d => d.media_type = 'tv')
+
+			commit('shows', data)
 		} catch(e) { console.log(e) }
 	},
 
@@ -106,6 +118,20 @@ export default {
 			commit('genres', response.data.genres)
 		} catch(e) { console.log(e) }
 	},
+
+	async getContentInfo({commit}, payload) {
+		const [type, id] = payload
+		try {
+			const response = await axios.get(`https://api.themoviedb.org/3/${type}/${id}
+																				?api_key=${key}
+																				&language=en-US
+																				&append_to_response=videos,images,credits
+																			`)
+			commit('contentInfo', response.data)
+		} catch(e) {
+			console.log(e)
+		}
+	}
 }
 
 

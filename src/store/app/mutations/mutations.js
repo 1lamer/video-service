@@ -27,6 +27,10 @@ export default {
 		state.searchResults = search
 	},
 
+	contentInfo(state, contentInfo) {
+		state.contentInfo = contentInfo
+	}
+
 	// addToMyList(state, content) {
 	// 	state.myList[content.id] = content
  // 	}

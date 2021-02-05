@@ -4,7 +4,7 @@
 		<div class="header__row row">
 
 			<router-link to='/' class="header__company">
-				<svg class="header__logo" width="40" height="40">
+				<svg class="header__logo" width="40" height="40" fill="#E5261E">
 					<use xlink:href="@/assets/img/sprite.svg#logo"></use>
 				</svg>
 				<span class="header__company-name">Videoservice</span>

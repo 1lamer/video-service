@@ -29,6 +29,8 @@
 			>
 				{{message}}
 			</v-snackbar>
+
+			<contentInfo v-if="Object.keys(contentInfo).length" :content="contentInfo"/>
 			
 		</div>
 		<!-- /container -->
@@ -38,11 +40,12 @@
 
 
 <script>
-	import {mapGetters, mapMutations} from 'vuex'
+	import {mapGetters, mapMutations, mapState} from 'vuex'
 	import Header from '@/components/header/header'
 	import Nav from '@/components/nav/nav'
 	import Footer from '@/components/footer/footer'
 	import fouteFade from '@/components/animations/route-fade'
+	import contentInfo from '@/components/app-content/content-info'
 
 	export default {
 		name: 'App',
@@ -50,12 +53,14 @@
 			Header,
 			Footer,
 			Nav,
-			fouteFade
+			fouteFade,
+			contentInfo
 		},
 		data: () => ({
 			snackbar: false
 		}),
 		computed: {
+			...mapState(['contentInfo']),
 			...mapGetters(['message', 'isShow']),
 			isActive() {
 				return this.isShow
@@ -67,7 +72,6 @@
 				this.changeIsShow(this.snackbar)
 			},
 			isActive() {
-				console.log(this.isShow)
 				this.snackbar = this.isShow
 			}
 		},

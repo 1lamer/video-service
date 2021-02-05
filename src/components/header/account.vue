@@ -26,13 +26,13 @@
 		</button>
 
 		<signIn
-			v-show="signIn"
+			v-if="signIn"
 			@replace="replace()"
 			@close="signIn = false"
 			@authorized="authorized = true"
 		/>
 		<signUp
-			v-show="signUp"
+			v-if="signUp"
 			@replace="replace()"
 			@close="signUp = false"
 		/>

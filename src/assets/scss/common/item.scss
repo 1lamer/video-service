@@ -1,49 +1,23 @@
 .item {
-	// width: 280px;
+	position: relative;
+
 	width: 200px;
 
 	transition: all .2s;
 
-	&__link {
-		position: relative;
+	&:hover {
+		transform: scale(1.1);
+  }
 
+	&__link {
 		display: block;
 
 		overflow: hidden;
 		cursor: pointer;
-		
-		&:hover {
-			.item__description { 
-				opacity: 1;
-
-				transition: opacity 0.3s ease-in-out;
-			}
-		}
-	}
-
-	&__description { 
-			position: absolute;
-			top: 0;
-			left: 0;
-
-			width: 100%;
-			// height: 370px;
-			height: 300px;
-			padding: 16px;
-			border-radius: 8px;
-
-			background-color: rgba(51, 51, 51, 0.8);
-			overflow: hidden;
-			opacity: 0;
-
-			font-size: $mainFontSize;
-			line-height: 22px;
-			color: #ffffff;
 	}
 
 	&__poster {
 		width: 100%;
-		// height: 370px;
 		height: 300px;
 
 		margin-bottom: 15px;
@@ -52,11 +26,6 @@
 		box-shadow: 5px 20px 30px rgba(0,0,0,0.3);
 
 		transition: all 0.2s ease-in-out;
-
-		&:hover {
-			transform: translateY(-6px);
-	    box-shadow: 5px 20px 30px rgba(0,0,0,0.2);
-	  }
 	}
 
 	&__name { 

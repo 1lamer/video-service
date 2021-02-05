@@ -108,7 +108,7 @@ export default {
 
 		margin: 0 auto;
 
-		overflow: hidden;
+		// overflow: hidden;
 
 		@media screen and (max-width: $maxDesktopWidth) {
 	    max-width: 1100px;// 1080px;

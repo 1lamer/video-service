@@ -1,7 +1,7 @@
 <template>
 
 	<li class="list__item item">
-		<a class="item__link">
+		<a class="item__link" @click="contentInfo(item.media_type, item.id)">
 			<img
 				:src="item.poster_path
 					? `https://image.tmdb.org/t/p/w500/${item.poster_path}`
@@ -10,36 +10,41 @@
 				alt="poster"
 				class="item__poster"
 			>
-
-			<!-- <p class="item__description">
-					{{item.overview}}
-			</p> -->
-
 			<h3 class="item__name">{{item.title || item.name}}</h3>
-
-			<favorite :content="item" />
 		</a>
+		
+		<favorite :content="item"/>
 	</li>
 
 </template>
 
 <script>
-import favorite from '@/components/UI/favorite/favorite'
+	import {mapActions} from 'vuex'
+	import favorite from '@/components/UI/favorite/favorite'
 
-export default {
-	name: 'item',
-	components: {
-		favorite
-	},
-	props: {
-		item: {
-			type: Object,
-			default: () => ({})
+	export default {
+		name: 'item',
+		components: {
+			favorite,
+		},
+		props: {
+			item: {
+				type: Object,
+				default: () => ({})
+			}
+		},
+		data: () => ({
+			isActive: false
+		}),
+		methods: {
+			...mapActions(['getContentInfo']),
+
+			async contentInfo(type, id) {
+				try {
+					await this.getContentInfo([type, id])
+				} catch(e) { console.log(e) } 
+			}
 		}
-	},
-	data: () => ({
-		
-	})
-}
+	}
 </script>
 

@@ -85,7 +85,7 @@
 				<!-- /form__item -->
 
 				<div class="form__submit">
-					<button type="submit" class="button button--simple">Submit</button>
+					<button type="submit" class="button button--simple">Sign up</button>
 				</div>
 				<!-- /form__submit -->
 			</form>

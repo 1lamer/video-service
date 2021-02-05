@@ -33,7 +33,6 @@
 </template>
 
 <script>
-
 export default {
   components: {
   },
@@ -54,89 +53,89 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// Animation
-.modal-enter {
-  opacity: 0
-}
-.modal-leave-active {
-  opacity: 0
-}
-.modal-enter .modal-content,
-.modal-leave-active .modal-content {
-  transform: scale(1.2)
-}
-
-.modal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  transition: opacity .2s ease;
-  z-index: 998;
-  background-color: rgba(00,00,00,.48);
-
-  &__wrapper {
-    position: relative;
-    max-width: 600px;
-    padding: 20px 18px;
-    background-color: #fff;
-    border: 1px solid #dcdfe6;
-    transition: all .2s ease;
-    border-radius: 8px;
-    z-index: 999;
-    overflow: hidden;
-    @media screen and (min-width: 900px) {
-      min-width: 500px;
-    }
+  // Animation
+  .modal-enter {
+    opacity: 0
+  }
+  .modal-leave-active {
+    opacity: 0
+  }
+  .modal-enter .modal-content,
+  .modal-leave-active .modal-content {
+    transform: scale(1.2)
   }
 
-  &__header {
+  .modal {
     display: flex;
-    align-self: center;
-    justify-content: space-between;
-    padding-bottom: 20px;
-    
-  }
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: opacity .2s ease;
+    z-index: 998;
+    background-color: rgba(00,00,00,.48);
 
-  &__title{
-    font-size: 24px;
-  }
-
-  &__body {
-    text-align: center;
-  }
-
-  &__footer { text-align: center; }
-
-  &__switch {
-    background-color: transparent;
-
-    cursor: pointer;
-
-    font-size: 16px;
-    line-height: 10px;
-    text-align: center;
-
-    &::after {
-      content: '';
-
-      display: inline-block;
-
-      width: 0;
-      height: 1px;
-      background: black;
-
-      transition: .2s all;
+    &__wrapper {
+      position: relative;
+      max-width: 600px;
+      padding: 20px 18px;
+      background-color: #fff;
+      border: 1px solid #dcdfe6;
+      transition: all .2s ease;
+      border-radius: 8px;
+      z-index: 999;
+      overflow: hidden;
+      @media screen and (min-width: 900px) {
+        min-width: 500px;
+      }
     }
 
-    &:hover, &:focus {
-      &::after { width: 100%; }
+    &__header {
+      display: flex;
+      align-self: center;
+      justify-content: space-between;
+      padding-bottom: 20px;
+      
+    }
+
+    &__title{
+      font-size: 24px;
+    }
+
+    &__body {
+      text-align: center;
+    }
+
+    &__footer { text-align: center; }
+
+    &__switch {
+      background-color: transparent;
+
+      cursor: pointer;
+
+      font-size: 16px;
+      line-height: 10px;
+      text-align: center;
+
+      &::after {
+        content: '';
+
+        display: inline-block;
+
+        width: 0;
+        height: 1px;
+        background: black;
+
+        transition: .2s all;
+      }
+
+      &:hover, &:focus {
+        &::after { width: 100%; }
+      }
     }
   }
-}
 
 </style>
