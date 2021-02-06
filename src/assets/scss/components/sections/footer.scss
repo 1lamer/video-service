@@ -1,19 +1,23 @@
 .footer {
-	position: absolute;
-	left: 0;
-	buttom: 0;
+	margin-top: auto;
 	
-	@include flexAlign;
-	flex-direction: column;
+	&__wrapper {
+		position: absolute;
+		left: 0;
+		buttom: 0;
+		
+		@include flexAlign;
+		flex-direction: column;
 
-	width: 100%;
-	padding: 20px;
+		width: 100%;
+		padding: 20px;
 
-	background-color: #F2F2F2;
+		background-color: #F2F2F2;
 
-	text-align: center;
+		text-align: center;
 
-	@media screen and (max-width: $phoneWidth) { padding: 10px; }
+		@media screen and (max-width: $phoneWidth) { padding: 10px; }
+	}
 
 	&__info { 
 		margin-bottom: 10px;
