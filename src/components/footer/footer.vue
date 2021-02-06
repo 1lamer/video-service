@@ -2,7 +2,7 @@
 	<footer class="footer">
 		<div class="footer__wrapper">
 			<p class="footer__info">
-				Made by Dyakonov Vadim
+				Dyakonov Vadim
 			</p>
 			<nav class="footer__contacts">
 				<a href="https://www.upwork.com/o/profiles/users/~015e7770f8d8102981/" target="_blank" class="footer__link">

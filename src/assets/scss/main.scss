@@ -115,7 +115,7 @@ section,
   display: flex;
   flex-direction: column;
 
-  min-height: 100vh;
+  min-height: 100%;
   width: 100%;
   max-width: $maxDesktopWidth;
   padding: 100px 20px 0;
@@ -131,6 +131,7 @@ section,
     max-width: $tableWidth;
   }
   @media screen and (max-width: $tableWidth) {
+    min-height: 80vh;
     max-width: $phoneWidth;
     padding: 100px 4px 0;
   }
