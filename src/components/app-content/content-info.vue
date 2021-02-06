@@ -146,9 +146,23 @@
 		},
 		data: () => ({
       swiperOption: {
-        slidesPerView: 7,
-        spaceBetween: 30,
+        slidesPerView: 2,
+        spaceBetween: 10,
         slidesPerGroup: 3,
+        breakpoints: {
+        	480: {
+        		slidesPerView: 3,
+        	},
+        	640: {
+        		slidesPerView: 4,
+        	},
+        	1024: {
+        		slidesPerView: 5,
+        	},
+        	1200: {
+        		slidesPerView: 7,
+        	}
+        },
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'
@@ -191,11 +205,16 @@
 
 	.swiper-button-next,
 	.swiper-button-prev {
-		color: #fff !important;
+		top: 40%;
 
-		&:hover, &:focus {
-			color: #000 !important;
-		}
+		color: #fff !important;
+	}
+
+	.swiper-button-next {
+		right: 0;
+	}
+	.swiper-button-prev {
+		left: 0;
 	}
 
 	.favorite { position: static; }
@@ -275,10 +294,6 @@
 			margin-bottom: 20px;
 		}
 
-		&__credits {
-
-		}
-
 		&__info {
 			display: block;
 
@@ -331,9 +346,97 @@
 
 			&__name {
 				font-size: 14px;
+				text-align: center;
+			}
+		}
+	}
+
+	@media screen and (max-width: $desktopWidth) {
+    .content-info {
+
+    	&__container {
+				width: 70%;
 			}
 
+			&__row {
+				flex-direction: column;
+				align-items: center;
+			}
+
+			&__col:nth-child(1),
+			&__col:nth-child(2) { width: 100%; }
+
+			&__site {
+				display: inline-block;
+
+				margin-bottom: 20px;
+			}
+
+			.credits {
+
+				&__list {
+
+				}
+
+				&__item {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+				}
+
+				&__image {
+					min-width: 100px;
+					width: 100px;
+					height: 120px;
+
+					border-radius: 50%;
+				}
+
+				&__name {
+					font-size: 14px;
+				}
+			}
+  }
+
+  @media screen and (max-width: $smDesktopWidth) {
+    .content-info {
+
+	  	&__container {
+				width: 80%;
+			}
 		}
+  }
+
+  @media screen and (max-width: $tableWidth) {
+    .content-info {
+
+	  	&__container {
+				width: 100%;
+			}
+		}
+  }
+
+  @media screen and (max-width: $smTableWidth) {
+    .content-info {
+
+	  	&__video-content { max-height: 260px; }
+
+	  	&__site {
+				&::after { right: -10%; } 
+
+				&:hover, &:focus {
+					&::after { right: -15%; }
+				}
+			}
+		}
+  }
+
+  @media screen and (max-width: $phoneWidth) {
+    .content-info {
+
+	  	&__video-content { max-height: 150px; }
+		}
+  }
 }
 
 </style>
