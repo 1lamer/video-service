@@ -7,6 +7,10 @@
 
 	&:hover {
 		transform: scale(1.1);
+
+		@media screen and (max-width: $tableWidth) {
+			transform: scale(1.03);
+    }
   }
 
 	&__link {
@@ -23,9 +27,6 @@
 		margin-bottom: 15px;
 
 		border-radius: 8px;
-		box-shadow: 5px 20px 30px rgba(0,0,0,0.3);
-
-		transition: all 0.2s ease-in-out;
 	}
 
 	&__name { 

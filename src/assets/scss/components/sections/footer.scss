@@ -1,17 +1,19 @@
 .footer {
 	position: absolute;
 	left: 0;
-	right: 0;
 	buttom: 0;
 	
 	@include flexAlign;
 	flex-direction: column;
 
+	width: 100%;
 	padding: 20px;
 
 	background-color: #F2F2F2;
 
 	text-align: center;
+
+	@media screen and (max-width: $phoneWidth) { padding: 10px; }
 
 	&__info { 
 		margin-bottom: 10px;
